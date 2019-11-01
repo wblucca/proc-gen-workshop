@@ -1,5 +1,6 @@
 # Author
 # William Lucca
+import random
 
 FILES = [
     'input1.txt',
@@ -9,7 +10,7 @@ FILES = [
 word_dicts = {}
 
 
-def add_word_pair(first, second):
+def add_pair_to_dict(first, second):
     global word_dicts
     
     # If either is an empty string, don't modify dictionary
@@ -39,8 +40,49 @@ def construct_dicts():
             last_word = ''
             for line in f:
                 for word in line.split():
-                    add_word_pair(last_word, word)
+                    add_pair_to_dict(last_word, word)
                     last_word = word
+
+
+def get_next_word(last_word):
+    num_choices = 0
+    for word in word_dicts[last_word]:
+        num_choices += word_dicts[last_word][word]
+    
+    rand = random.random()
+    cumulative_prob = 0
+    
+    for word in word_dicts[last_word]:
+        cumulative_prob += word_dicts[last_word][word] / num_choices
+        if rand < cumulative_prob:
+            return word
+    
+    # Probabilities didn't accumulate to one
+    raise Exception('Probabilities for next word did not accumulate to 1.')
+
+
+def string_from_dicts():
+    string = ''
+    last_word = 'a'
+    
+    while not should_terminate(string):
+        next_word = get_next_word(last_word)
+        string += next_word
+        last_word = next_word
+    
+    return string
+
+
+def should_terminate(string):
+    # Don't terminate if empty
+    if len(string) == 0:
+        return False
+    
+    # Terminate on period
+    if string[-1] is '.':
+        return True
+    
+    return False
 
 
 def main():
@@ -48,6 +90,8 @@ def main():
     
     for word in word_dicts:
         print(word, word_dicts[word])
+    
+    print(string_from_dicts())
 
 
 if __name__ == '__main__':
