@@ -8,6 +8,8 @@ FILES = [
     'input2.txt'
 ]
 
+# Markov chain data
+starting_words = []
 word_dicts = {}
 
 
@@ -18,10 +20,12 @@ def add_pair_to_dict(first, second):
     :param second: The following word, as it appears in the training data
     """
     
-    global word_dicts
+    global starting_words, word_dicts
     
-    # If either is an empty string, don't modify dictionary
-    if first is '' or second is '':
+    # If first is an empty or terminal string, add second as a starting word
+    if first is '' or is_terminal(first):
+        if second not in starting_words:
+            starting_words.append(second)
         return
     
     # Add/increment the pair
@@ -90,16 +94,18 @@ def get_next_word(last_word):
 def string_from_dicts():
     """Returns a string created from the Markov chain input data
     
-    The string is terminated when it returns true if passed to
-    should_terminate().
+    The string is terminated when it reaches a terminal case i.e.
+    is_terminal(string)).
     
     :return: The generated string after meeting some termination case
     """
     
-    string = ''
-    last_word = 'a'
+    # Get random starting word and begin string with it
+    starting_word_id = random.randint(0, len(starting_words) - 1)
+    last_word = starting_words[starting_word_id]
+    string = last_word.capitalize()
     
-    while not should_terminate(string) and last_word is not '':
+    while not is_terminal(string) and last_word is not '':
         next_word = get_next_word(last_word)
         string += next_word
         last_word = next_word
@@ -107,7 +113,7 @@ def string_from_dicts():
     return string
 
 
-def should_terminate(string):
+def is_terminal(string):
     """Defines the rules for when to terminate the generated string
     
     :param string: The string to check for termination
