@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MarkovWords.py" beforeDir="false" afterPath="$PROJECT_DIR$/MarkovWords.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/input1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input2.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +117,7 @@
       <workItem from="1572582023553" duration="1030000" />
       <workItem from="1572584539576" duration="1594000" />
       <workItem from="1572616561708" duration="3618000" />
-      <workItem from="1572625267227" duration="2046000" />
+      <workItem from="1572625267227" duration="2186000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
@@ -169,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572626732901</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Check for different terminal punctuation">
+      <created>1572627388517</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572627388517</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,11 +202,12 @@
     <MESSAGE value="Account for no valid word choice or word not in dictionary" />
     <MESSAGE value="Record starting words and start new strings with them" />
     <MESSAGE value="Add optional separator when generating strings (ont checked for terminal case)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add optional separator when generating strings (ont checked for terminal case)" />
+    <MESSAGE value="Check for different terminal punctuation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check for different terminal punctuation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProcGenFun$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1572568636047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proc_gen_workshop$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572627348000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proc_gen_workshop$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572627447959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProcGenFun$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572582966969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

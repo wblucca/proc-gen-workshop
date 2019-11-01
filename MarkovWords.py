@@ -144,6 +144,8 @@ def main():
         print(word, word_dicts[word])
     
     print(string_from_dicts())
+    print(string_from_dicts())
+    print(string_from_dicts())
 
 
 if __name__ == '__main__':
