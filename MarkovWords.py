@@ -52,9 +52,9 @@ def construct_dicts():
     # Open each file to read line-by-line, word-by-word
     for file_name in FILES:
         with open(file_name, 'r') as f:
-            # Previous word (in this file)
-            last_word = ''
             for line in f:
+                # Previous word (in this line)
+                last_word = ''
                 for word in line.split():
                     add_pair_to_dict(last_word, word)
                     last_word = word
@@ -111,7 +111,7 @@ def string_from_dicts(sep=' '):
     while not is_terminal(string) and last_word is not '':
         string += sep
         next_word = get_next_word(last_word)
-        string += next_word.lower()
+        string += next_word
         last_word = next_word
     
     return string
@@ -132,6 +132,10 @@ def is_terminal(string):
     if string[-1] in TERMINAL_PUNCTUATION:
         return True
     
+    # Check for too many words
+    if len(string.split()) >= 100:
+        return True
+    
     return False
 
 
@@ -140,12 +144,9 @@ def main():
     
     construct_dicts()
     
-    for word in word_dicts:
-        print(word, word_dicts[word])
+    for i in range(10):
+        print(string_from_dicts())
     
-    print(string_from_dicts())
-    print(string_from_dicts())
-    print(string_from_dicts())
 
 
 if __name__ == '__main__':
