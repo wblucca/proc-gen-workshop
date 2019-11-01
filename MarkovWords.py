@@ -1,5 +1,6 @@
 # Author
 # William Lucca
+
 import random
 
 FILES = [
@@ -11,6 +12,12 @@ word_dicts = {}
 
 
 def add_pair_to_dict(first, second):
+    """Mark the word pair in the dictionary as an existing/more common relationship
+    
+    :param first: The preceding word, as it appears in the training data
+    :param second: The following word, as it appears in the training data
+    """
+    
     global word_dicts
     
     # If either is an empty string, don't modify dictionary
@@ -31,6 +38,8 @@ def add_pair_to_dict(first, second):
 
 
 def construct_dicts():
+    """Read through input files to train the program on word relationships"""
+    
     global word_dicts
     
     # Open each file to read line-by-line, word-by-word
@@ -45,13 +54,25 @@ def construct_dicts():
 
 
 def get_next_word(last_word):
+    """Using weightings in dictionaries, randomly select the next word
+    
+    :param last_word: The prior word to use to when selecting the next word
+    :return: The next word
+    :raises Exception: If something goes wrong when computing probabilities of
+    the next word, raise an exception
+    """
+    
+    # Count up the number of possible words, including repeats
     num_choices = 0
     for word in word_dicts[last_word]:
         num_choices += word_dicts[last_word][word]
     
+    # Pick a random value for the word
     rand = random.random()
     cumulative_prob = 0
     
+    # Add up the cumulative probability (from 0 to 1) and return the current
+    # when reaching the random value in the cumulative probability
     for word in word_dicts[last_word]:
         cumulative_prob += word_dicts[last_word][word] / num_choices
         if rand < cumulative_prob:
@@ -62,6 +83,14 @@ def get_next_word(last_word):
 
 
 def string_from_dicts():
+    """Returns a string created from the Markov chain input data
+    
+    The string is terminated when it returns true if passed to
+    should_terminate().
+    
+    :return: The generated string after meeting some termination case
+    """
+    
     string = ''
     last_word = 'a'
     
@@ -74,6 +103,12 @@ def string_from_dicts():
 
 
 def should_terminate(string):
+    """Defines the rules for when to terminate the generated string
+    
+    :param string: The string to check for termination
+    :return: True if satisfying termination conditions, False otherwise
+    """
+    
     # Don't terminate if empty
     if len(string) == 0:
         return False
@@ -86,6 +121,8 @@ def should_terminate(string):
 
 
 def main():
+    """Train the Markov chain and produce output from it"""
+    
     construct_dicts()
     
     for word in word_dicts:
