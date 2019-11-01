@@ -12,6 +12,9 @@ FILES = [
 starting_words = []
 word_dicts = {}
 
+# Other rules
+TERMINAL_PUNCTUATION = ['.', '?', '!', '.\"']
+
 
 def add_pair_to_dict(first, second):
     """Mark the word pair in the dictionary as an existing/more common relationship
@@ -108,7 +111,7 @@ def string_from_dicts(sep=' '):
     while not is_terminal(string) and last_word is not '':
         string += sep
         next_word = get_next_word(last_word)
-        string += next_word
+        string += next_word.lower()
         last_word = next_word
     
     return string
@@ -125,8 +128,8 @@ def is_terminal(string):
     if len(string) == 0:
         return False
     
-    # Terminate on period
-    if string[-1] is '.':
+    # Check for terminal punctuation
+    if string[-1] in TERMINAL_PUNCTUATION:
         return True
     
     return False
@@ -140,7 +143,7 @@ def main():
     for word in word_dicts:
         print(word, word_dicts[word])
     
-    print(string_from_dicts(sep=''))
+    print(string_from_dicts())
 
 
 if __name__ == '__main__':
