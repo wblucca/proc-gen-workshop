@@ -64,8 +64,13 @@ def get_next_word(last_word):
     
     # Count up the number of possible words, including repeats
     num_choices = 0
-    for word in word_dicts[last_word]:
-        num_choices += word_dicts[last_word][word]
+    if last_word in word_dicts:
+        for word in word_dicts[last_word]:
+            num_choices += word_dicts[last_word][word]
+    
+    # Return empty string if no valid choice
+    if num_choices == 0:
+        return ''
     
     # Pick a random value for the word
     rand = random.random()
@@ -94,7 +99,7 @@ def string_from_dicts():
     string = ''
     last_word = 'a'
     
-    while not should_terminate(string):
+    while not should_terminate(string) and last_word is not '':
         next_word = get_next_word(last_word)
         string += next_word
         last_word = next_word
