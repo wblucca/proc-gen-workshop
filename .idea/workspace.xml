@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="Better training data and print more strings">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/MarkovWords.py" beforeDir="false" afterPath="$PROJECT_DIR$/MarkovWords.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/star-wars-a-new-hope.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input2.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +118,7 @@
       <workItem from="1572584539576" duration="1594000" />
       <workItem from="1572616561708" duration="3618000" />
       <workItem from="1572625267227" duration="2233000" />
-      <workItem from="1572633122197" duration="2082000" />
+      <workItem from="1572633122197" duration="2251000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
@@ -183,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572627496225</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Word limit, new line resets word pair, Star Wars training data">
+      <created>1572635363817</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572635363817</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,11 +219,12 @@
     <MESSAGE value="Add optional separator when generating strings (ont checked for terminal case)" />
     <MESSAGE value="Check for different terminal punctuation" />
     <MESSAGE value="Better training data and print more strings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better training data and print more strings" />
+    <MESSAGE value="Word limit, new line resets word pair, Star Wars training data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Word limit, new line resets word pair, Star Wars training data" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProcGenFun$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1572568636047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proc_gen_workshop$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572635305476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proc_gen_workshop$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572635402234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProcGenFun$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572582966969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

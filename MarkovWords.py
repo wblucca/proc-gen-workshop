@@ -4,8 +4,7 @@
 import random
 
 FILES = [
-    'input1.txt',
-    'input2.txt'
+    'star-wars-a-new-hope.txt'
 ]
 
 # Markov chain data
