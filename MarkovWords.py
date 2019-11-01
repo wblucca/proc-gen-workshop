@@ -91,7 +91,7 @@ def get_next_word(last_word):
     raise Exception('Probabilities for next word did not accumulate to 1.')
 
 
-def string_from_dicts():
+def string_from_dicts(sep=' '):
     """Returns a string created from the Markov chain input data
     
     The string is terminated when it reaches a terminal case i.e.
@@ -106,6 +106,7 @@ def string_from_dicts():
     string = last_word.capitalize()
     
     while not is_terminal(string) and last_word is not '':
+        string += sep
         next_word = get_next_word(last_word)
         string += next_word
         last_word = next_word
@@ -139,7 +140,7 @@ def main():
     for word in word_dicts:
         print(word, word_dicts[word])
     
-    print(string_from_dicts())
+    print(string_from_dicts(sep=''))
 
 
 if __name__ == '__main__':
