@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/William.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/William.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioGeneration/SineWave.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/SineWave.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +147,7 @@
       <workItem from="1572633122197" duration="2251000" />
       <workItem from="1573139278328" duration="2681000" />
       <workItem from="1573143547286" duration="2847000" />
-      <workItem from="1573147340099" duration="271000" />
+      <workItem from="1573147340099" duration="1368000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
@@ -245,7 +247,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573143650162</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Uninstalled a bunch of packages">
+      <created>1573147658123</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1573147658123</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix docstrings to look like Sphinx">
+      <created>1573147732924</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1573147732924</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +296,9 @@
     <MESSAGE value="Fix configurations to match new directory structure" />
     <MESSAGE value="Write wav file parameters to header" />
     <MESSAGE value="Move SineWave into its own file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move SineWave into its own file" />
+    <MESSAGE value="Uninstalled a bunch of packages" />
+    <MESSAGE value="Fix docstrings to look like Sphinx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix docstrings to look like Sphinx" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1573147631840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

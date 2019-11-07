@@ -2,6 +2,7 @@
   <dictionary name="William">
     <words>
       <w>bitdepth</w>
+      <w>bytespersamp</w>
       <w>getsamples</w>
       <w>numchannels</w>
       <w>numsamples</w>

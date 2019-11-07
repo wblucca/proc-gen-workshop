@@ -9,15 +9,18 @@ class SineWave:
         self.freq = freq
         self.offset = offset
     
-    def getsamples(self, numsamples, bitdepth=16, sampfreq=44100, numchannels=1) -> bytes:
+    def getsamples(self, numsamples, bytespersamp=2, sampfreq=44100) -> bytes:
         """Get audio samples from this mathematically defined sine wave
         
+        Default parameters use standard audio quality.
         :param numsamples: The number of samples to generate
-        :param bitdepth: The bit-depth of one sample
+        :param bytespersamp: The bit-depth of one sample
         :param sampfreq: The sample frequency (in Hz)
-        :param numchannels: The number of channels to generate audio for
         :return: The audio samples as bytes objects
         :rtype: bytes
         """
+        
+        # Get max audio volume for this bit-depth
+        maxvol = 256 ** bytespersamp - 1
         
         return b''
