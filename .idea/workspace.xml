@@ -4,6 +4,7 @@
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/William.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/William.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioGeneration/MultiWaveEvolution.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/MultiWaveEvolution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioGeneration/SineWave.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/SineWave.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -148,6 +149,7 @@
       <workItem from="1573139278328" duration="2681000" />
       <workItem from="1573143547286" duration="2847000" />
       <workItem from="1573147340099" duration="1368000" />
+      <workItem from="1573151697486" duration="3264000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>

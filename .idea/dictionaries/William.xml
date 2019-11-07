@@ -4,10 +4,16 @@
       <w>bitdepth</w>
       <w>bytespersamp</w>
       <w>getsamples</w>
+      <w>maxvolume</w>
+      <w>minvolume</w>
       <w>numchannels</w>
+      <w>numsamp</w>
       <w>numsamples</w>
       <w>pygame</w>
       <w>sampfreq</w>
+      <w>sampvol</w>
+      <w>sinevalue</w>
+      <w>volceiling</w>
     </words>
   </dictionary>
 </component>

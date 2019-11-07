@@ -12,6 +12,8 @@ SAMP_FREQ = 44.1  # In kHz
 NUM_CHANNELS = 1  # Mono or stereo
 DURATION = 3  # In seconds
 
+MAX_VOLUME = 256 ** BIT_DEPTH - 1
+
 
 def main():
     """Initializes an audio file with some parameters and writes a sine wave
