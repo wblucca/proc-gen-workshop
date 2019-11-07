@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ProcGenFun.iml" filepath="$PROJECT_DIR$/.idea/ProcGenFun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/proc-gen-workshop.iml" filepath="$PROJECT_DIR$/.idea/proc-gen-workshop.iml" />
     </modules>
   </component>
 </project>

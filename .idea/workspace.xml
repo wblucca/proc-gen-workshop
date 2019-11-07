@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MarkovWords.py" beforeDir="false" afterPath="$PROJECT_DIR$/MarkovWords.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/star-wars-a-new-hope.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProcGenFun.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proc-gen-workshop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LinearBoxBlur.py" beforeDir="false" afterPath="$PROJECT_DIR$/TerrainGeneration/LinearBoxBlur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarkovWords.py" beforeDir="false" afterPath="$PROJECT_DIR$/LanguageGeneration/MarkovWords.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +121,7 @@
       <workItem from="1572616561708" duration="3618000" />
       <workItem from="1572625267227" duration="2233000" />
       <workItem from="1572633122197" duration="2251000" />
+      <workItem from="1573139278328" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
