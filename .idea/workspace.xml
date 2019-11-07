@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AudioGeneration/SineWave.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioGeneration/MultiWaveEvolution.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/MultiWaveEvolution.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -143,6 +145,7 @@
       <workItem from="1572625267227" duration="2233000" />
       <workItem from="1572633122197" duration="2251000" />
       <workItem from="1573139278328" duration="2681000" />
+      <workItem from="1573143547286" duration="86000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>

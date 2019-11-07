@@ -26,13 +26,5 @@ def main():
         pass
 
 
-class SineWave:
-    
-    def __init__(self, amplitude, freq, offset=0):
-        self.amplitude = amplitude
-        self.freq = freq
-        self.offset = offset
-
-
 if __name__ == '__main__':
     main()
