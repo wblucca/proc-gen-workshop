@@ -2,13 +2,14 @@
 # William Lucca
 
 import wave
+import AudioGeneration.SineWave
 
 # Standard audio quality: 16-bit, 44.1kHz
 
 # Audio file parameters
-NUM_CHANNELS = 1  # Mono or stereo
-BIT_DEPTH = 16  # How many bits in one audio sample
+BIT_DEPTH = 16  # How many bits in one audio sample for one channel
 SAMP_FREQ = 44.1  # In kHz
+NUM_CHANNELS = 1  # Mono or stereo
 DURATION = 3  # In seconds
 
 
@@ -17,9 +18,9 @@ def main():
     
     with wave.open('output.wav', 'w') as out:
         # Setup audio file parameters
-        out.setnchannels(NUM_CHANNELS)
-        out.setsampwidth(int(BIT_DEPTH * NUM_CHANNELS // 8))
+        out.setsampwidth(BIT_DEPTH * NUM_CHANNELS // 8)
         out.setframerate(int(SAMP_FREQ * 1000))
+        out.setnchannels(NUM_CHANNELS)
         out.setnframes(int(DURATION * SAMP_FREQ * 1000))
         
         # Write some data
