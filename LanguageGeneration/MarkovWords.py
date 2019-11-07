@@ -16,7 +16,7 @@ TERMINAL_PUNCTUATION = ['.', '?', '!', '.\"']
 
 
 def add_pair_to_dict(first, second):
-    """Mark the word pair in the dictionary as an existing/more common relationship
+    """Mark word pair in the dictionary as an existing/more common relationship
     
     :param first: The preceding word, as it appears in the training data
     :param second: The following word, as it appears in the training data
@@ -44,7 +44,8 @@ def add_pair_to_dict(first, second):
 
 
 def construct_dicts():
-    """Read through input files to train the program on word relationships"""
+    """Read through input files to train the program on word relationships
+    """
     
     global word_dicts
     
@@ -139,13 +140,13 @@ def is_terminal(string):
 
 
 def main():
-    """Train the Markov chain and produce output from it"""
+    """Train the Markov chain and produce output from it
+    """
     
     construct_dicts()
     
     for i in range(10):
         print(string_from_dicts())
-    
 
 
 if __name__ == '__main__':

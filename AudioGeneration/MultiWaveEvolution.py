@@ -14,7 +14,8 @@ DURATION = 3  # In seconds
 
 
 def main():
-    """Initializes an audio file with some parameters and writes a sine wave"""
+    """Initializes an audio file with some parameters and writes a sine wave
+    """
     
     with wave.open('output.wav', 'w') as out:
         # Setup audio file parameters

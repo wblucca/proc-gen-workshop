@@ -68,7 +68,8 @@ def linear_box_blur(grid):
 
 
 def add_points(grid, num_points):
-    """Set num_points random locations to be random elev values"""
+    """Set num_points random locations to be random elev values
+    """
     
     for i in range(num_points):
         # Coord for crit point
@@ -83,7 +84,8 @@ def add_points(grid, num_points):
 
 
 def draw_grid(grid):
-    """Draw the given grid to the pygame window"""
+    """Draw the given grid to the pygame window
+    """
     
     # Tile size variables
     tile_width = STAGE_WIDTH / GRID_WIDTH
@@ -99,7 +101,8 @@ def draw_grid(grid):
 
 
 def get_color(elev):
-    """Returns a color to represent the given tile elev"""
+    """Returns a color to represent the given tile elev
+    """
     
     # Map from [from_low, from_high] to [0, 1]
     elev_range = MAX_HEIGHT - MIN_HEIGHT
