@@ -10,6 +10,7 @@
       <w>numframes</w>
       <w>numsamp</w>
       <w>numsamples</w>
+      <w>outwav</w>
       <w>pygame</w>
       <w>sampfreq</w>
       <w>sampvol</w>

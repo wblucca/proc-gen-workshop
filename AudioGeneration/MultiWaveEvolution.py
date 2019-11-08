@@ -19,20 +19,20 @@ def main():
     """Initializes an audio file with some parameters and writes a sine wave
     """
     
-    with wave.open('output.wav', 'wb') as out:
+    with wave.open('output.wav', 'wb') as outwav:
         # Setup audio file parameters
         sampwidth = BIT_DEPTH * NUM_CHANNELS // 8
         framerate = int(SAMP_FREQ * 1000)
         numframes = int(DURATION * SAMP_FREQ * 1000)
-        out.setsampwidth(sampwidth)
-        out.setframerate(framerate)
-        out.setnchannels(NUM_CHANNELS)
-        out.setnframes(numframes)
+        outwav.setsampwidth(sampwidth)
+        outwav.setframerate(framerate)
+        outwav.setnchannels(NUM_CHANNELS)
+        outwav.setnframes(numframes)
         print(sampwidth, framerate, numframes)
         
         # Write some data
-        sine = SineWave(100, 32000, 32500)
-        out.writeframes(sine.getsamples(numframes, sampwidth, framerate))
+        sine = SineWave(440, 0.1 * MAX_VOLUME, 0.9 * MAX_VOLUME)
+        outwav.writeframes(sine.getsamples(numframes, sampwidth, framerate))
 
 
 if __name__ == '__main__':

@@ -45,7 +45,7 @@ class SineWave:
             
             # Map to sample volume and push to samples
             sampvolume = int(self.minvolume + (self.amplitude * sinevalue))
-            samples += sampvolume.to_bytes(bytespersamp, 'big')
+            samples += sampvolume.to_bytes(bytespersamp, 'little')
             
             # Step x-coordinate
             x += 1 / sampfreq
