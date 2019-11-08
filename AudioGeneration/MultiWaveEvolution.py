@@ -2,7 +2,7 @@
 # William Lucca
 
 import wave
-from AudioGeneration.SineWave import SineWave
+from AudioGeneration.Wave import Wave
 
 # Standard audio quality: 16-bit, 44.1kHz
 
@@ -31,8 +31,8 @@ def main():
         print(sampwidth, framerate, numframes)
         
         # Write some data
-        sine = SineWave(440, 0.1 * MAX_VOLUME, 0.9 * MAX_VOLUME)
-        outwav.writeframes(sine.getsamples(numframes, sampwidth, framerate))
+        sine = Wave(440, 0.1 * MAX_VOLUME, 0.9 * MAX_VOLUME)
+        outwav.writeframes(sine.squaresamples(numframes, sampwidth, framerate))
 
 
 if __name__ == '__main__':

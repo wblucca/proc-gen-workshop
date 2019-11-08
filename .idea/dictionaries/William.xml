@@ -16,7 +16,10 @@
       <w>sampvol</w>
       <w>sampvolume</w>
       <w>sampwidth</w>
+      <w>sinesamples</w>
       <w>sinevalue</w>
+      <w>squaresamples</w>
+      <w>squarevalue</w>
       <w>volceiling</w>
     </words>
   </dictionary>

@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/William.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/William.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioGeneration/MultiWaveEvolution.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/MultiWaveEvolution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioGeneration/SineWave.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/SineWave.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioGeneration/SineWave.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/Wave.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioGeneration/output.wav" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/output.wav" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -151,7 +151,7 @@
       <workItem from="1573143547286" duration="2847000" />
       <workItem from="1573147340099" duration="1368000" />
       <workItem from="1573151697486" duration="8558000" />
-      <workItem from="1573222924940" duration="3176000" />
+      <workItem from="1573222924940" duration="4570000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
@@ -279,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573177530991</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Try byte order 'little' instead, needs testing">
+      <created>1573226664778</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1573226664778</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,13 +325,14 @@
     <MESSAGE value="Fix docstrings to look like Sphinx" />
     <MESSAGE value="Sine wave getsamples function done, needs testing" />
     <MESSAGE value="Make bad sounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make bad sounds" />
+    <MESSAGE value="Try byte order 'little' instead, needs testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try byte order 'little' instead, needs testing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1573147631840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProcGenFun$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1572568636047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1573147637465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proc_gen_workshop$MultiWaveEvolution.coverage" NAME="MultiWaveEvolution Coverage Results" MODIFIED="1573226283278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
+    <SUITE FILE_PATH="coverage/proc_gen_workshop$MultiWaveEvolution.coverage" NAME="MultiWaveEvolution Coverage Results" MODIFIED="1573227991642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
     <SUITE FILE_PATH="coverage/ProcGenFun$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572582966969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$SineWave.coverage" NAME="SineWave Coverage Results" MODIFIED="1573146022180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
   </component>

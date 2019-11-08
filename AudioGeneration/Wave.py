@@ -4,7 +4,7 @@
 from math import sin, pi
 
 
-class SineWave:
+class Wave:
     
     def __init__(self, freq, minvolume, maxvolume, offset=0):
         """Creates a SineWave object
@@ -22,8 +22,8 @@ class SineWave:
         self.amplitude = maxvolume - minvolume
         self.offset = offset
     
-    def getsamples(self, numsamp, bytespersamp=2, sampfreq=44100) -> bytes:
-        """Get audio samples from this mathematically defined sine wave
+    def sinesamples(self, numsamp, bytespersamp=2, sampfreq=44100) -> bytes:
+        """Get audio samples from the wave's attributes using a sine function
         
         Default parameters use standard audio quality.
         :param numsamp: The number of samples to generate
@@ -45,6 +45,41 @@ class SineWave:
             
             # Map to sample volume and push to samples
             sampvolume = int(self.minvolume + (self.amplitude * sinevalue))
+            samples += sampvolume.to_bytes(bytespersamp, 'little')
+            
+            # Step x-coordinate
+            x += 1 / sampfreq
+        
+        return samples
+    
+    def squaresamples(self, numsamp, bytespersamp=2, sampfreq=44100) -> bytes:
+        """Get audio samples from the wave's attributes using a sine function
+        
+        Default parameters use standard audio quality.
+        :param numsamp: The number of samples to generate
+        :param bytespersamp: The bit-depth of one sample
+        :param sampfreq: The sample frequency (in Hz)
+        :return: The audio samples as bytes objects
+        :rtype: bytes
+        """
+        
+        # Variables for math function
+        x = 0  # In seconds
+        period = 1 / self.freq
+        
+        # Initialize return samples as a bytes object
+        samples = b''
+        
+        for i in range(numsamp):
+            # Value of square wave function [0, 1]
+            pos_in_period = (x + self.offset) / period
+            if pos_in_period % 1 < 0.5:
+                squarevalue = 0
+            else:
+                squarevalue = 1
+            
+            # Map to sample volume and push to samples
+            sampvolume = int(self.minvolume + (self.amplitude * squarevalue))
             samples += sampvolume.to_bytes(bytespersamp, 'little')
             
             # Step x-coordinate
