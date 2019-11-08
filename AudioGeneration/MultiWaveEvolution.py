@@ -31,7 +31,8 @@ def main():
         print(sampwidth, framerate, numframes)
         
         # Write some data
-        sine = Wave(440, 0.1 * MAX_VOLUME, 0.9 * MAX_VOLUME)
+        sine = Wave(3520, 0.0 * MAX_VOLUME, 0.1 * MAX_VOLUME)
+        print(sine.minvolume, sine.maxvolume, sine.amplitude)
         outwav.writeframes(sine.squaresamples(numframes, sampwidth, framerate))
 
 

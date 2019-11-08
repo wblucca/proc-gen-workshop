@@ -17,9 +17,9 @@ class Wave:
         
         # Store sine wave parameters
         self.freq = freq
-        self.minvolume = minvolume
-        self.maxvolume = maxvolume
-        self.amplitude = maxvolume - minvolume
+        self.minvolume = int(minvolume)
+        self.maxvolume = int(maxvolume)
+        self.amplitude = self.maxvolume - self.minvolume
         self.offset = offset
     
     def sinesamples(self, numsamp, bytespersamp=2, sampfreq=44100) -> bytes:
@@ -33,22 +33,19 @@ class Wave:
         :rtype: bytes
         """
         
-        # x-coordinate for stepping through the sine wave function for samples
-        x = 0
-        
         # Initialize return samples as a bytes object
         samples = b''
         
         for i in range(numsamp):
+            # Get x-value
+            x = i / sampfreq
+            
             # Value of sine function [0, 1]
             sinevalue = sin(2 * pi * self.freq * (x - self.offset)) / 2 + 0.5
             
             # Map to sample volume and push to samples
             sampvolume = int(self.minvolume + (self.amplitude * sinevalue))
             samples += sampvolume.to_bytes(bytespersamp, 'little')
-            
-            # Step x-coordinate
-            x += 1 / sampfreq
         
         return samples
     
@@ -63,26 +60,24 @@ class Wave:
         :rtype: bytes
         """
         
-        # Variables for math function
-        x = 0  # In seconds
+        # Wave period
         period = 1 / self.freq
         
         # Initialize return samples as a bytes object
         samples = b''
         
         for i in range(numsamp):
+            # Get x-value
+            x = i / sampfreq
+            
             # Value of square wave function [0, 1]
             pos_in_period = (x + self.offset) / period
             if pos_in_period % 1 < 0.5:
-                squarevalue = 0
+                squarevalue = self.minvolume
             else:
-                squarevalue = 1
+                squarevalue = self.maxvolume
             
-            # Map to sample volume and push to samples
-            sampvolume = int(self.minvolume + (self.amplitude * squarevalue))
-            samples += sampvolume.to_bytes(bytespersamp, 'little')
-            
-            # Step x-coordinate
-            x += 1 / sampfreq
+            # Push to samples
+            samples += squarevalue.to_bytes(bytespersamp, 'little')
         
         return samples
