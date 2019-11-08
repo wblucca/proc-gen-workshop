@@ -7,11 +7,14 @@
       <w>maxvolume</w>
       <w>minvolume</w>
       <w>numchannels</w>
+      <w>numframes</w>
       <w>numsamp</w>
       <w>numsamples</w>
       <w>pygame</w>
       <w>sampfreq</w>
       <w>sampvol</w>
+      <w>sampvolume</w>
+      <w>sampwidth</w>
       <w>sinevalue</w>
       <w>volceiling</w>
     </words>

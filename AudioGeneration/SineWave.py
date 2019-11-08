@@ -33,9 +33,6 @@ class SineWave:
         :rtype: bytes
         """
         
-        # Get max audio volume for this bit-depth
-        volceiling = 256 ** bytespersamp - 1
-        
         # x-coordinate for stepping through the sine wave function for samples
         x = 0
         
@@ -43,11 +40,14 @@ class SineWave:
         samples = b''
         
         for i in range(numsamp):
-            # Value of sine function [-1, 1]
-            sinevalue = sin((2 * pi * x) - self.offset)
+            # Value of sine function [0, 1]
+            sinevalue = sin(2 * pi * self.freq * (x - self.offset)) / 2 + 0.5
             
             # Map to sample volume and push to samples
-            sampvolume = int(self.minvolume + (self.amplitude * sinevalue / 2))
-            samples += sampvolume.to_bytes(2, 'big')
+            sampvolume = int(self.minvolume + (self.amplitude * sinevalue))
+            samples += sampvolume.to_bytes(bytespersamp, 'big')
+            
+            # Step x-coordinate
+            x += 1 / sampfreq
         
         return samples
