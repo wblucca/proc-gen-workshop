@@ -2,7 +2,7 @@
 # William Lucca
 
 import wave
-from AudioGeneration.wave import Wave
+from AudioGeneration.audiowave import Wave
 
 # Standard audio quality: 16-bit, 44.1kHz
 
