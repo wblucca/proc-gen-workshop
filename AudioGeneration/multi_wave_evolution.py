@@ -32,13 +32,12 @@ def main():
         
         # Write some data
         sineA1 = Wave(440, -MAX_VOLUME, MAX_VOLUME)
-        sineA2 = Wave(442, -MAX_VOLUME, MAX_VOLUME)
+        sineA2 = Wave(444, -MAX_VOLUME, MAX_VOLUME)
         framesA1 = sineA1.sinesamples(DURATION, sampwidth, framerate, 0.2, 0.2)
         framesA2 = sineA2.sinesamples(DURATION, sampwidth, framerate, 0.2, 0.2)
         
         mixed = mixsamples(sampwidth, framesA1, framesA2)
-        
-        outwav.writeframes(framesA1)
+        outwav.writeframes(mixed)
 
 
 def mixsamples(bytespersamp, *waves):
@@ -53,10 +52,10 @@ def mixsamples(bytespersamp, *waves):
     # Get length of shortest audio sample list
     shortestlen = -1
     for w in waves:
-        if len(waves) > shortestlen:
-            shortestlen = len(waves) // bytespersamp
+        if len(w) > shortestlen:
+            shortestlen = len(w)
     
-    finalsamples = b''
+    finalsamples = bytearray()
     numwaves = len(waves)
     
     # Average the individual samples of each wave one at a time
@@ -65,16 +64,18 @@ def mixsamples(bytespersamp, *waves):
         total = 0
         for w in waves:
             # Get signed integer value of sample and add to sum
-            total += twoscompint(w[i: i + bytespersamp], bytespersamp)
+            sample = w[i: i + bytespersamp]
+            total += twoscompint(sample, bytespersamp)
         
         # Convert average into two's complement
         average = total // numwaves
         average = twoscompbytes(average, bytespersamp)
         
         # Push average onto finalsamples
-        finalsamples += average
-    
-    return finalsamples
+        for byte in average:
+            finalsamples.append(byte)
+
+    return bytes(finalsamples)
 
 
 if __name__ == '__main__':

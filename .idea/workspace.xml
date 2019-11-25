@@ -153,7 +153,7 @@
       <workItem from="1573151697486" duration="8558000" />
       <workItem from="1573222924940" duration="6214000" />
       <workItem from="1573313432089" duration="329000" />
-      <workItem from="1574362835885" duration="29101000" />
+      <workItem from="1574362835885" duration="32013000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
@@ -351,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574706656119</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Mix samples looking better, not quite working">
+      <created>1574708245967</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1574708245967</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +379,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Markov generator working with specified starting word" />
     <MESSAGE value="Account for no valid word choice or word not in dictionary" />
     <MESSAGE value="Record starting words and start new strings with them" />
     <MESSAGE value="Add optional separator when generating strings (ont checked for terminal case)" />
@@ -397,13 +403,14 @@
     <MESSAGE value="Rename files, python convention" />
     <MESSAGE value="Rename files again, python convention" />
     <MESSAGE value="Mix samples implemented, but needs testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mix samples implemented, but needs testing" />
+    <MESSAGE value="Mix samples looking better, not quite working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mix samples looking better, not quite working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1573147631840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProcGenFun$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1572568636047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1573147637465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proc_gen_workshop$MultiWaveEvolution.coverage" NAME="MultiWaveEvolution Coverage Results" MODIFIED="1574708192191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
+    <SUITE FILE_PATH="coverage/proc_gen_workshop$MultiWaveEvolution.coverage" NAME="MultiWaveEvolution Coverage Results" MODIFIED="1574713743369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
     <SUITE FILE_PATH="coverage/ProcGenFun$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572582966969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$SineWave.coverage" NAME="SineWave Coverage Results" MODIFIED="1573146022180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
   </component>

@@ -37,7 +37,7 @@ class Wave:
         """
         
         # Initialize return samples as a bytes object
-        samples = b''
+        samples = bytearray()
         
         for i in range(numsecs * sampfreq):
             # Get x-value (seconds)
@@ -60,9 +60,11 @@ class Wave:
             
             # Map to [-minvolume, maxvolume] and push to samples
             sampvolume = int(self.minvolume + self.amplitude * sinevalue)
-            samples += twoscompbytes(sampvolume, bytespersamp)
+            samplebytes = twoscompbytes(sampvolume, bytespersamp)
+            for byte in samplebytes:
+                samples.append(byte)
         
-        return samples
+        return bytes(samples)
     
     def squaresamples(self, numsecs, bytespersamp=2, sampfreq=44100) -> bytes:
         """Get audio samples from the wave's attributes using a sine function
@@ -71,7 +73,7 @@ class Wave:
         :param numsecs: The number of seconds to generate
         :param bytespersamp: The bit-depth of one sample
         :param sampfreq: The sample frequency (in Hz)
-        :return: The audio samples as bytes objects
+        :return: The audio samples as a bytes object
         :rtype: bytes
         """
         
@@ -79,7 +81,7 @@ class Wave:
         period = 1 / self.freq
         
         # Initialize return samples as a bytes object
-        samples = b''
+        samples = bytearray()
         
         for i in range(numsecs * sampfreq):
             # Get x-value
@@ -95,9 +97,11 @@ class Wave:
                 squarevalue = self.maxvolume
             
             # Push to samples
-            samples += twoscompbytes(squarevalue, bytespersamp)
+            samplebytes = twoscompbytes(squarevalue, bytespersamp)
+            for byte in samplebytes:
+                samples.append(byte)
         
-        return samples
+        return bytes(samples)
 
 
 def twoscompbytes(x, numbytes):
