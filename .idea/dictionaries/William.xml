@@ -3,9 +3,11 @@
     <words>
       <w>bitdepth</w>
       <w>bytespersamp</w>
+      <w>complementbits</w>
       <w>getsamples</w>
       <w>maxvolume</w>
       <w>minvolume</w>
+      <w>numbytes</w>
       <w>numchannels</w>
       <w>numframes</w>
       <w>numsamp</w>
@@ -20,6 +22,7 @@
       <w>sinevalue</w>
       <w>squaresamples</w>
       <w>squarevalue</w>
+      <w>twoscompbytes</w>
       <w>volceiling</w>
     </words>
   </dictionary>
