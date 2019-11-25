@@ -28,11 +28,9 @@ def main():
         outwav.setframerate(framerate)
         outwav.setnchannels(NUM_CHANNELS)
         outwav.setnframes(numframes)
-        print(sampwidth, framerate, numframes)
         
         # Write some data
-        sine = Wave(3520, 0.0 * MAX_VOLUME, 0.1 * MAX_VOLUME)
-        print(sine.minvolume, sine.maxvolume, sine.amplitude)
+        sine = Wave(220, -MAX_VOLUME, MAX_VOLUME)
         outwav.writeframes(sine.squaresamples(numframes, sampwidth, framerate))
 
 

@@ -46,7 +46,7 @@ class Wave:
             # Map to [-minvolume, maxvolume] and push to samples
             sampvolume = int(self.minvolume + (self.amplitude * sinevalue))
             samples += twoscompbytes(sampvolume, bytespersamp)
-        
+            
         return samples
     
     def squaresamples(self, numsamp, bytespersamp=2, sampfreq=44100) -> bytes:
@@ -96,6 +96,6 @@ def twoscompbytes(x, numbytes):
     
     if x < 0:
         complementbits = 2 ** (8 * numbytes) - 1
-        x = (x - 1) ^ complementbits
+        x = (abs(x) - 1) ^ complementbits
     
-    return x
+    return x.to_bytes(numbytes, 'little')

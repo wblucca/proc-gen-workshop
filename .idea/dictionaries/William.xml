@@ -5,6 +5,7 @@
       <w>bytespersamp</w>
       <w>complementbits</w>
       <w>getsamples</w>
+      <w>lucca</w>
       <w>maxvolume</w>
       <w>minvolume</w>
       <w>numbytes</w>
