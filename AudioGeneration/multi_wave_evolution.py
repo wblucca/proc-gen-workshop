@@ -2,7 +2,7 @@
 # William Lucca
 
 import wave
-from AudioGeneration.audiowave import Wave
+from AudioGeneration.audiowave import *
 
 # Standard audio quality: 16-bit, 44.1kHz
 
@@ -34,18 +34,41 @@ def main():
         frames = sine.sinesamples(DURATION, sampwidth, framerate, 0.2, 0.2)
         outwav.writeframes(frames)
 
-def mixsamples(numsecs, bytespersamp, sampfreq, *waves):
+
+def mixsamples(bytespersamp, *waves):
     """Mixes multiple waves together to produce a composite wave
     
-    :param numsecs: The number of seconds to generate
     :param bytespersamp: The depth of one sample in bytes
-    :param sampfreq: The sample frequency (in Hz)
-    :param waves: All of the waves to mix together
+    :param waves: All of the sample bytes objects
     :return: The mixed audio samples as a bytes object
     :rtype: bytes
     """
     
-    pass
+    # Get length of shortest audio sample list
+    shortestlen = -1
+    for w in waves:
+        if len(waves) > shortestlen:
+            shortestlen = len(waves) / bytespersamp
+    
+    finalsamples = []
+    numwaves = len(waves)
+    
+    # Average the individual samples of each wave one at a time
+    for i in range(shortestlen, step=bytespersamp):
+        # Cumulative sum for this wave
+        sum = 0
+        for w in waves:
+            # Get signed integer value of sample and add to sum
+            sum += twoscompint(w[i: i + bytespersamp], bytespersamp)
+        
+        # Convert average into two's complement
+        average = sum // numwaves
+        average = twoscompbytes(average, bytespersamp)
+        
+        # Push average onto finalsamples
+        finalsamples.append(average)
+    
+    return finalsamples
 
 
 if __name__ == '__main__':

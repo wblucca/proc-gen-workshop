@@ -109,8 +109,33 @@ def twoscompbytes(x, numbytes):
     :rtype: bytes
     """
     
+    # Check if negative
     if x < 0:
+        # Set positive, subtract 1, and flip the bits
         complementbits = 2 ** (8 * numbytes) - 1
         x = (abs(x) - 1) ^ complementbits
     
+    # Convert to bytes
     return x.to_bytes(numbytes, 'little')
+
+
+def twoscompint(x, numbytes):
+    """Gets the signed int shown by the given two's complement byte(s)
+
+    :param x: Bytes object integer to convert to integer
+    :param numbytes: Number of bytes used in the two's complement number
+    :return: Integer represented by the two's complement format bytes
+    :rtype: int
+    """
+    
+    # Convert from bytes
+    x = x.from_bytes(numbytes, 'little')
+    
+    # Check if negative
+    if x >> (8 * numbytes - 1) == 0b1:
+        # Flip bits, add one, and set negative
+        complementbits = 2 ** (8 * numbytes) - 1
+        x = x ^ complementbits + 1
+        x *= -1
+    
+    return x

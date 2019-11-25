@@ -6,6 +6,7 @@
       <w>complementbits</w>
       <w>fademult</w>
       <w>fadeprogress</w>
+      <w>finalsamples</w>
       <w>getsamples</w>
       <w>lucca</w>
       <w>maxvolume</w>
@@ -17,17 +18,20 @@
       <w>numsamples</w>
       <w>numseconds</w>
       <w>numsecs</w>
+      <w>numwaves</w>
       <w>outwav</w>
       <w>pygame</w>
       <w>sampfreq</w>
       <w>sampvol</w>
       <w>sampvolume</w>
       <w>sampwidth</w>
+      <w>shortestlen</w>
       <w>sinesamples</w>
       <w>sinevalue</w>
       <w>squaresamples</w>
       <w>squarevalue</w>
       <w>twoscompbytes</w>
+      <w>twoscompint</w>
       <w>volceiling</w>
     </words>
   </dictionary>
