@@ -22,7 +22,9 @@
       <w>numseconds</w>
       <w>numsecs</w>
       <w>numwaves</w>
+      <w>octavenum</w>
       <w>outwav</w>
+      <w>pianonum</w>
       <w>pygame</w>
       <w>sampfreq</w>
       <w>samplebytes</w>

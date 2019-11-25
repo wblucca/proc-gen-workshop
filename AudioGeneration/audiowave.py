@@ -5,6 +5,8 @@ from math import sin, pi
 
 
 class Wave:
+    """A wave form that can be made into digital audio samples
+    """
     
     def __init__(self, freq, minvolume, maxvolume, offset=0):
         """Creates a SineWave object
