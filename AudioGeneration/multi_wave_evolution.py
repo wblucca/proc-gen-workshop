@@ -31,8 +31,8 @@ def main():
         outwav.setnframes(numframes)
         
         # Write some data
-        sineA1 = Wave(440, -MAX_VOLUME, MAX_VOLUME)
-        sineA2 = Wave(444, -MAX_VOLUME, MAX_VOLUME)
+        sineA1 = Wave(220, -MAX_VOLUME, MAX_VOLUME)
+        sineA2 = Wave(369.994, -MAX_VOLUME, MAX_VOLUME)
         framesA1 = sineA1.sinesamples(DURATION, sampwidth, framerate, 0.2, 0.2)
         framesA2 = sineA2.sinesamples(DURATION, sampwidth, framerate, 0.2, 0.2)
         
