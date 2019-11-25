@@ -4,6 +4,8 @@
       <w>bitdepth</w>
       <w>bytespersamp</w>
       <w>complementbits</w>
+      <w>fademult</w>
+      <w>fadeprogress</w>
       <w>getsamples</w>
       <w>lucca</w>
       <w>maxvolume</w>
@@ -13,6 +15,8 @@
       <w>numframes</w>
       <w>numsamp</w>
       <w>numsamples</w>
+      <w>numseconds</w>
+      <w>numsecs</w>
       <w>outwav</w>
       <w>pygame</w>
       <w>sampfreq</w>

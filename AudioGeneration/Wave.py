@@ -22,13 +22,16 @@ class Wave:
         self.amplitude = self.maxvolume - self.minvolume
         self.offset = offset
     
-    def sinesamples(self, numsamp, bytespersamp=2, sampfreq=44100) -> bytes:
+    def sinesamples(self, numsecs, bytespersamp=2, sampfreq=44100,
+                    fadein=0, fadeout=0) -> bytes:
         """Get audio samples from the wave's attributes using a sine function
         
         Default parameters use standard audio quality. Only supports mono.
-        :param numsamp: The number of samples to generate
+        :param numsecs: The number of seconds to generate
         :param bytespersamp: The depth of one sample in bytes
         :param sampfreq: The sample frequency (in Hz)
+        :param fadein: How many seconds to fade in for
+        :param fadeout: How many seconds to fade out for
         :return: The audio samples as bytes objects
         :rtype: bytes
         """
@@ -36,24 +39,36 @@ class Wave:
         # Initialize return samples as a bytes object
         samples = b''
         
-        for i in range(numsamp):
-            # Get x-value
+        for i in range(numsecs * sampfreq):
+            # Get x-value (seconds)
             x = i / sampfreq
             
+            fademult = 1.0
+            # Fade in
+            if x < fadein:
+                # [0.0, 1.0] over the course of fade in time
+                fademult = x / fadein
+            
+            # Fade out
+            if (numsecs - x) < fadeout:
+                # [1.0, 0.0] over the course of fade out time
+                fademult = (numsecs - x) / fadeout
+            
             # Value of sine function [0, 1]
-            sinevalue = sin(2 * pi * self.freq * (x - self.offset)) / 2 + 0.5
+            b = 2 * pi * self.freq
+            sinevalue = fademult * sin(b * (x - self.offset)) / 2 + 0.5
             
             # Map to [-minvolume, maxvolume] and push to samples
-            sampvolume = int(self.minvolume + (self.amplitude * sinevalue))
+            sampvolume = int(self.minvolume + self.amplitude * sinevalue)
             samples += twoscompbytes(sampvolume, bytespersamp)
-            
+        
         return samples
     
-    def squaresamples(self, numsamp, bytespersamp=2, sampfreq=44100) -> bytes:
+    def squaresamples(self, numsecs, bytespersamp=2, sampfreq=44100) -> bytes:
         """Get audio samples from the wave's attributes using a sine function
         
         Default parameters use standard audio quality.
-        :param numsamp: The number of samples to generate
+        :param numsecs: The number of seconds to generate
         :param bytespersamp: The bit-depth of one sample
         :param sampfreq: The sample frequency (in Hz)
         :return: The audio samples as bytes objects
@@ -66,7 +81,7 @@ class Wave:
         # Initialize return samples as a bytes object
         samples = b''
         
-        for i in range(numsamp):
+        for i in range(numsecs * sampfreq):
             # Get x-value
             x = i / sampfreq
             

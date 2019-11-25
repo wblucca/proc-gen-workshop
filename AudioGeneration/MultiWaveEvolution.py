@@ -30,8 +30,9 @@ def main():
         outwav.setnframes(numframes)
         
         # Write some data
-        sine = Wave(220, -MAX_VOLUME, MAX_VOLUME)
-        outwav.writeframes(sine.squaresamples(numframes, sampwidth, framerate))
+        sine = Wave(440, -MAX_VOLUME, MAX_VOLUME)
+        frames = sine.sinesamples(DURATION, sampwidth, framerate, 0.3, 0.3)
+        outwav.writeframes(frames)
 
 
 if __name__ == '__main__':
