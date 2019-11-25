@@ -3,6 +3,7 @@
     <words>
       <w>bitdepth</w>
       <w>bytespersamp</w>
+      <w>bytevalue</w>
       <w>complementbits</w>
       <w>fademult</w>
       <w>fadeprogress</w>
@@ -11,6 +12,7 @@
       <w>lucca</w>
       <w>maxvolume</w>
       <w>minvolume</w>
+      <w>mixsamples</w>
       <w>numbytes</w>
       <w>numchannels</w>
       <w>numframes</w>
