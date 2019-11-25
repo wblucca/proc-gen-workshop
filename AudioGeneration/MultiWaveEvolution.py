@@ -31,8 +31,21 @@ def main():
         
         # Write some data
         sine = Wave(440, -MAX_VOLUME, MAX_VOLUME)
-        frames = sine.sinesamples(DURATION, sampwidth, framerate, 0.3, 0.3)
+        frames = sine.sinesamples(DURATION, sampwidth, framerate, 0.2, 0.2)
         outwav.writeframes(frames)
+
+def mixsamples(numsecs, bytespersamp, sampfreq, *waves):
+    """Mixes multiple waves together to produce a composite wave
+    
+    :param numsecs: The number of seconds to generate
+    :param bytespersamp: The depth of one sample in bytes
+    :param sampfreq: The sample frequency (in Hz)
+    :param waves: All of the waves to mix together
+    :return: The mixed audio samples as a bytes object
+    :rtype: bytes
+    """
+    
+    pass
 
 
 if __name__ == '__main__':

@@ -32,7 +32,7 @@ class Wave:
         :param sampfreq: The sample frequency (in Hz)
         :param fadein: How many seconds to fade in for
         :param fadeout: How many seconds to fade out for
-        :return: The audio samples as bytes objects
+        :return: The audio samples as a bytes object
         :rtype: bytes
         """
         
@@ -85,7 +85,7 @@ class Wave:
             # Get x-value
             x = i / sampfreq
             
-            # Get value of square wave function, either minvolume or maxvolume
+            # Value of square wave function, either minvolume or maxvolume
             pos_in_period = (x + self.offset) / period
             if pos_in_period % 1 < 0.5:
                 # [0, 0.5) in period length
