@@ -4,6 +4,7 @@
 import wave
 import random
 from AudioGeneration.audiowave import *
+from AudioGeneration.note import *
 
 # Standard audio quality: 16-bit, 44.1kHz
 
@@ -11,7 +12,7 @@ from AudioGeneration.audiowave import *
 BIT_DEPTH = 16  # How many bits in one audio sample for one channel
 SAMP_FREQ = 44.1  # In kHz
 NUM_CHANNELS = 1  # Mono or stereo
-DURATION = 3  # In seconds
+DURATION = 1.8  # In seconds
 
 MAX_VOLUME = (256 ** (BIT_DEPTH // 8)) / 2 - 1
 
@@ -31,10 +32,10 @@ def main():
         outwav.setnframes(numframes)
         
         # Write some data
-        sineA1 = Wave(220, -MAX_VOLUME, MAX_VOLUME)
-        sineA2 = Wave(369.994, -MAX_VOLUME, MAX_VOLUME)
-        framesA1 = sineA1.sinesamples(DURATION, sampwidth, framerate, 0.2, 0.2)
-        framesA2 = sineA2.sinesamples(DURATION, sampwidth, framerate, 0.2, 0.2)
+        sineA1 = Wave(Note('A3').freq, -MAX_VOLUME, MAX_VOLUME)
+        sineA2 = Wave(Note('F#4').freq, -MAX_VOLUME, MAX_VOLUME)
+        framesA1 = sineA1.sinesamples(DURATION, sampwidth, framerate, 0.1, 0.1)
+        framesA2 = sineA2.sinesamples(DURATION, sampwidth, framerate, 0.1, 0.1)
         
         mixed = mixsamples(sampwidth, framesA1, framesA2)
         outwav.writeframes(mixed)

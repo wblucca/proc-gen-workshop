@@ -39,7 +39,7 @@ class Wave:
         """
         
         # Initialize return samples as a bytes object
-        numsamps = numsecs * sampfreq
+        numsamps = int(numsecs * sampfreq)
         samples = bytearray(numsamps * bytespersamp)
         
         # Index in samples bytearray
@@ -88,7 +88,7 @@ class Wave:
         period = 1 / self.freq
         
         # Initialize return samples as a bytes object
-        numsamps = numsecs * sampfreq
+        numsamps = int(numsecs * sampfreq)
         samples = bytearray(numsamps * bytespersamp)
         
         # Index in samples bytearray
