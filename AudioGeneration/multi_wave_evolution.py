@@ -55,8 +55,11 @@ def mixsamples(bytespersamp, *waves):
         if len(w) > shortestlen:
             shortestlen = len(w)
     
-    finalsamples = bytearray()
+    finalsamples = bytearray(shortestlen)
     numwaves = len(waves)
+    
+    # Index in finalsamples bytearray
+    s = 0
     
     # Average the individual samples of each wave one at a time
     for i in range(0, shortestlen, bytespersamp):
@@ -73,7 +76,8 @@ def mixsamples(bytespersamp, *waves):
         
         # Push average onto finalsamples
         for byte in average:
-            finalsamples.append(byte)
+            finalsamples[s] = byte
+            s += 1
 
     return bytes(finalsamples)
 
