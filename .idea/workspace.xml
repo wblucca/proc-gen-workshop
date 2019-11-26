@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioGeneration/multi_wave_evolution.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/multi_wave_evolution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioGeneration/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/note.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +150,7 @@
       <workItem from="1573151697486" duration="8558000" />
       <workItem from="1573222924940" duration="6214000" />
       <workItem from="1573313432089" duration="329000" />
-      <workItem from="1574362835885" duration="35739000" />
+      <workItem from="1574362835885" duration="35851000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
@@ -383,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574778524991</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Initialize bytearray size for efficiency">
+      <created>1574778625317</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1574778625317</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

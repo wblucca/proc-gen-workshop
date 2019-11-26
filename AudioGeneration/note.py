@@ -67,4 +67,5 @@ def getfreq(pianonum):
     :rtype: float
     """
     
-    return
+    exponential = 2 ** ((pianonum - 49) / 12)
+    return exponential * 440
