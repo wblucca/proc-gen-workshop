@@ -9,6 +9,7 @@
       <w>fademult</w>
       <w>fadeprogress</w>
       <w>finalsamples</w>
+      <w>getpianonum</w>
       <w>getsamples</w>
       <w>lucca</w>
       <w>maxvolume</w>
@@ -19,6 +20,7 @@
       <w>numframes</w>
       <w>numsamp</w>
       <w>numsamples</w>
+      <w>numsamps</w>
       <w>numseconds</w>
       <w>numsecs</w>
       <w>numwaves</w>

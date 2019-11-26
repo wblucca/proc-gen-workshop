@@ -39,9 +39,13 @@ class Wave:
         """
         
         # Initialize return samples as a bytes object
-        samples = bytearray()
+        numsamps = numsecs * sampfreq
+        samples = bytearray(numsamps * bytespersamp)
         
-        for i in range(numsecs * sampfreq):
+        # Index in samples bytearray
+        s = 0
+        
+        for i in range(numsamps):
             # Get x-value (seconds)
             x = i / sampfreq
             
@@ -64,7 +68,8 @@ class Wave:
             sampvolume = int(self.minvolume + self.amplitude * sinevalue)
             samplebytes = twoscompbytes(sampvolume, bytespersamp)
             for byte in samplebytes:
-                samples.append(byte)
+                samples[s] = byte
+                s += 1
         
         return bytes(samples)
     
@@ -83,9 +88,13 @@ class Wave:
         period = 1 / self.freq
         
         # Initialize return samples as a bytes object
-        samples = bytearray()
+        numsamps = numsecs * sampfreq
+        samples = bytearray(numsamps * bytespersamp)
         
-        for i in range(numsecs * sampfreq):
+        # Index in samples bytearray
+        s = 0
+        
+        for i in range(numsamps):
             # Get x-value
             x = i / sampfreq
             
@@ -101,7 +110,8 @@ class Wave:
             # Push to samples
             samplebytes = twoscompbytes(squarevalue, bytespersamp)
             for byte in samplebytes:
-                samples.append(byte)
+                samples[s] = byte
+                s += 1
         
         return bytes(samples)
 
