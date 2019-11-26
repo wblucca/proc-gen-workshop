@@ -29,6 +29,7 @@ def getpianonum(name):
     # Different offsets depending on the chars in the name string
     letter = 0
     semitone = 0
+    octave = 0
     
     # Parse letter
     if 'A' in name:
@@ -47,14 +48,19 @@ def getpianonum(name):
         letter = 11
     
     # Parse semitone
-    if '#' in name:
+    if '##' in name or 'x' in name:
+        semitone = 2  # Double sharp
+    elif '#' in name:
         semitone = 1
+    elif 'bb' in name:
+        semitone = -2  # Double flat
     elif 'b' in name:
         semitone = -1
     
     # Parse octave
     octavenum = re.search('\\d+', name)
-    octave = 12 * int(octavenum.group(0))
+    if octavenum:
+        octave = 12 * int(octavenum.group(0))
     
     return letter + semitone + octave
 
