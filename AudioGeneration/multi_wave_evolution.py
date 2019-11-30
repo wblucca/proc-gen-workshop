@@ -12,12 +12,14 @@ from AudioGeneration.note import *
 BIT_DEPTH = 16  # How many bits in one audio sample for one channel
 SAMP_FREQ = 44.1  # In kHz
 NUM_CHANNELS = 1  # Mono or stereo
-DURATION = 1.8  # In seconds
 
+DURATION = 10  # Duration of whole audio file (seconds)
+FADE = 0.06  # Duration of fade (seconds)
+
+SAMP_WIDTH = BIT_DEPTH * NUM_CHANNELS // 8
+FRAMERATE = int(SAMP_FREQ * 1000)
+NUM_FRAMES = int(DURATION * SAMP_FREQ * 1000)
 MAX_VOLUME = (256 ** (BIT_DEPTH // 8)) / 2 - 1
-
-# Store all the generated wave sounds
-generatedsounds = []
 
 
 def main():
@@ -26,46 +28,59 @@ def main():
     
     with wave.open('output.wav', 'wb') as outwav:
         # Setup audio file parameters
-        sampwidth = BIT_DEPTH * NUM_CHANNELS // 8
-        framerate = int(SAMP_FREQ * 1000)
-        numframes = int(DURATION * SAMP_FREQ * 1000)
-        outwav.setsampwidth(sampwidth)
-        outwav.setframerate(framerate)
+        outwav.setsampwidth(SAMP_WIDTH)
+        outwav.setframerate(FRAMERATE)
         outwav.setnchannels(NUM_CHANNELS)
-        outwav.setnframes(numframes)
+        outwav.setnframes(NUM_FRAMES)
+
+        # Write some chords
+        chords = [
+            ['A2', 'C3', 'A3'],
+            ['B2', 'D3', 'B3'],
+            ['C3', 'E3', 'C4'],
+            ['B2', 'D3', 'B3'],
+            ['A2', 'C3', 'A3'],
+            ['B2', 'D3', 'B3'],
+            ['C3', 'E3', 'C4']
+        ]
+        for c in chords:
+            writechord(outwav, c, DURATION / len(chords))
         
-        # Create pool of worker processes for generating digital audio samples
-        pool = multiprocessing.Pool(4)
-        
-        # Make some audio wave objects
-        notes = ['A3', 'C#4', 'E4', 'A4']
-        waves = []
-        for n in notes:
-            waves.append(Wave(Note(n).freq, -MAX_VOLUME, MAX_VOLUME))
-        
-        # Get their digital audio samples (expensive!)
-        results = []
-        for w in waves:
-            results.append(pool.apply_async(
-                    w.sinesamples,
-                    args=(DURATION, sampwidth, framerate, 0.1, 0.1)
-            ))
-        
-        # Retrieve samples from pool's results objects
-        for r in results:
-            audio = r.get()
-            generatedsounds.append(audio)
-        
-        # Mix all of the generated waves
-        mixed = mixsamples(sampwidth, generatedsounds)
-        
-        # Clean up pool processes
-        pool.close()
-        pool.join()
-        
-        # Write to wav file
-        outwav.writeframes(mixed)
         outwav.close()
+
+
+def writechord(outwav, notes, duration):
+    # Create pool of worker processes for generating digital audio samples
+    pool = multiprocessing.Pool(4)
+    
+    # Make some audio wave objects
+    waves = []
+    for n in notes:
+        waves.append(Wave(Note(n).freq, -MAX_VOLUME, MAX_VOLUME))
+    
+    # Get their digital audio samples (expensive!)
+    results = []
+    for w in waves:
+        results.append(pool.apply_async(
+                w.sinesamples,
+                args=(duration, SAMP_WIDTH, FRAMERATE, FADE, FADE)
+        ))
+    
+    # Retrieve samples from pool's results objects
+    generatedsounds = []
+    for r in results:
+        audio = r.get()
+        generatedsounds.append(audio)
+    
+    # Mix all of the generated waves
+    mixed = mixsamples(SAMP_WIDTH, generatedsounds)
+    
+    # Clean up pool processes
+    pool.close()
+    pool.join()
+    
+    # Write to wav file
+    outwav.writeframes(mixed)
 
 
 def mixsamples(bytespersamp, waves):

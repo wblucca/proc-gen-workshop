@@ -37,15 +37,15 @@ def getpianonum(name):
     elif 'B' in name:
         letter = 3
     elif 'C' in name:
-        letter = 4
+        letter = -8
     elif 'D' in name:
-        letter = 6
+        letter = -6
     elif 'E' in name:
-        letter = 8
+        letter = -4
     elif 'F' in name:
-        letter = 9
+        letter = -3
     elif 'G' in name:
-        letter = 11
+        letter = -1
     
     # Parse semitone
     if '##' in name or 'x' in name:
