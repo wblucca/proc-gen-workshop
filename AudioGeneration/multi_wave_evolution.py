@@ -13,12 +13,8 @@ BIT_DEPTH = 16  # How many bits in one audio sample for one channel
 SAMP_FREQ = 44.1  # In kHz
 NUM_CHANNELS = 1  # Mono or stereo
 
-DURATION = 10  # Duration of whole audio file (seconds)
-FADE = 0.06  # Duration of fade (seconds)
-
 SAMP_WIDTH = BIT_DEPTH * NUM_CHANNELS // 8
 FRAMERATE = int(SAMP_FREQ * 1000)
-NUM_FRAMES = int(DURATION * SAMP_FREQ * 1000)
 MAX_VOLUME = (256 ** (BIT_DEPTH // 8)) / 2 - 1
 
 
@@ -31,20 +27,16 @@ def main():
         outwav.setsampwidth(SAMP_WIDTH)
         outwav.setframerate(FRAMERATE)
         outwav.setnchannels(NUM_CHANNELS)
-        outwav.setnframes(NUM_FRAMES)
 
         # Write some chords
         chords = [
-            ['A2', 'C3', 'A3'],
-            ['B2', 'D3', 'B3'],
-            ['C3', 'E3', 'C4'],
-            ['B2', 'D3', 'B3'],
-            ['A2', 'C3', 'A3'],
-            ['B2', 'D3', 'B3'],
-            ['C3', 'E3', 'C4']
+            ['D4', 'A4'], 3,
+            ['D4', 'A#4'], 3,
+            ['D4', 'A4'], 3,
+            ['Db4', 'A4'], 3,
         ]
-        for c in chords:
-            writechord(outwav, c, DURATION / len(chords))
+        for i in range(0, len(chords), 2):
+            writechord(outwav, chords[i], chords[i + 1])
         
         outwav.close()
 
@@ -60,10 +52,11 @@ def writechord(outwav, notes, duration):
     
     # Get their digital audio samples (expensive!)
     results = []
+    fade = 0.2 * duration
     for w in waves:
         results.append(pool.apply_async(
                 w.sinesamples,
-                args=(duration, SAMP_WIDTH, FRAMERATE, FADE, FADE)
+                args=(duration, SAMP_WIDTH, FRAMERATE, fade, fade)
         ))
     
     # Retrieve samples from pool's results objects

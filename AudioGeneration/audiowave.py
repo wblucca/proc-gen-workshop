@@ -22,6 +22,7 @@ class Wave:
         self.minvolume = int(minvolume)
         self.maxvolume = int(maxvolume)
         self.amplitude = self.maxvolume - self.minvolume
+        self.axis = (self.minvolume + self.maxvolume) / 2
         self.offset = offset
     
     def sinesamples(self, numsecs, bytespersamp=2, sampfreq=44100,
@@ -73,13 +74,16 @@ class Wave:
         
         return bytes(samples)
     
-    def squaresamples(self, numsecs, bytespersamp=2, sampfreq=44100) -> bytes:
+    def squaresamples(self, numsecs, bytespersamp=2, sampfreq=44100,
+                      fadein=0, fadeout=0) -> bytes:
         """Get audio samples from the wave's attributes using a sine function
         
         Default parameters use standard audio quality.
         :param numsecs: The number of seconds to generate
         :param bytespersamp: The bit-depth of one sample
         :param sampfreq: The sample frequency (in Hz)
+        :param fadein: How many seconds to fade in for
+        :param fadeout: How many seconds to fade out for
         :return: The audio samples as a bytes object
         :rtype: bytes
         """
@@ -98,14 +102,25 @@ class Wave:
             # Get x-value
             x = i / sampfreq
             
-            # Value of square wave function, either minvolume or maxvolume
+            fademult = 1.0
+            # Fade in
+            if x < fadein:
+                # [0.0, 1.0] over the course of fade in time
+                fademult = x / fadein
+            
+            # Fade out
+            if (numsecs - x) < fadeout:
+                # [1.0, 0.0] over the course of fade out time
+                fademult = (numsecs - x) / fadeout
+            
+            # Value of square wave function [minvolume, maxvolume]
             pos_in_period = (x + self.offset) / period
             if pos_in_period % 1 < 0.5:
                 # [0, 0.5) in period length
-                squarevalue = self.minvolume
+                squarevalue = int(self.axis - 0.5 * self.amplitude * fademult)
             else:
                 # [0.5, 1) in period length
-                squarevalue = self.maxvolume
+                squarevalue = int(self.axis + 0.5 * self.amplitude * fademult)
             
             # Push to samples
             samplebytes = twoscompbytes(squarevalue, bytespersamp)
