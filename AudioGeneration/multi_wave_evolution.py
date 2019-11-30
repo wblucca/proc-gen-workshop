@@ -21,7 +21,7 @@ generatedsounds = []
 
 
 def main():
-    """Initializes an audio file with some parameters and writes a sine wave
+    """Initializes an audio file with some parameters and writes an audio wave
     """
     
     with wave.open('output.wav', 'wb') as outwav:
