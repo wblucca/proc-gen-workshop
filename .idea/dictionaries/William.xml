@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="William">
     <words>
+      <w>addgeneratedsound</w>
       <w>bitdepth</w>
       <w>bytearray</w>
       <w>bytespersamp</w>
@@ -9,6 +10,7 @@
       <w>fademult</w>
       <w>fadeprogress</w>
       <w>finalsamples</w>
+      <w>generatedsounds</w>
       <w>getpianonum</w>
       <w>getsamples</w>
       <w>lucca</w>

@@ -2,7 +2,7 @@
 # William Lucca
 
 import wave
-import random
+import multiprocessing
 from AudioGeneration.audiowave import *
 from AudioGeneration.note import *
 
@@ -15,6 +15,9 @@ NUM_CHANNELS = 1  # Mono or stereo
 DURATION = 1.8  # In seconds
 
 MAX_VOLUME = (256 ** (BIT_DEPTH // 8)) / 2 - 1
+
+# Store all the generated wave sounds
+generatedsounds = []
 
 
 def main():
@@ -31,17 +34,41 @@ def main():
         outwav.setnchannels(NUM_CHANNELS)
         outwav.setnframes(numframes)
         
-        # Write some data
-        sineA1 = Wave(Note('A3').freq, -MAX_VOLUME, MAX_VOLUME)
-        sineA2 = Wave(Note('F#4').freq, -MAX_VOLUME, MAX_VOLUME)
-        framesA1 = sineA1.sinesamples(DURATION, sampwidth, framerate, 0.1, 0.1)
-        framesA2 = sineA2.sinesamples(DURATION, sampwidth, framerate, 0.1, 0.1)
+        # Create pool of worker processes for generating digital audio samples
+        pool = multiprocessing.Pool(4)
         
-        mixed = mixsamples(sampwidth, framesA1, framesA2)
+        # Make some audio wave objects
+        notes = ['A3', 'C#4', 'E4', 'A4']
+        waves = []
+        for n in notes:
+            waves.append(Wave(Note(n).freq, -MAX_VOLUME, MAX_VOLUME))
+        
+        # Get their digital audio samples (expensive!)
+        results = []
+        for w in waves:
+            results.append(pool.apply_async(
+                    w.sinesamples,
+                    args=(DURATION, sampwidth, framerate, 0.1, 0.1)
+            ))
+        
+        # Retrieve samples from pool's results objects
+        for r in results:
+            audio = r.get()
+            generatedsounds.append(audio)
+        
+        # Mix all of the generated waves
+        mixed = mixsamples(sampwidth, generatedsounds)
+        
+        # Clean up pool processes
+        pool.close()
+        pool.join()
+        
+        # Write to wav file
         outwav.writeframes(mixed)
+        outwav.close()
 
 
-def mixsamples(bytespersamp, *waves):
+def mixsamples(bytespersamp, waves):
     """Mixes multiple waves together to produce a composite wave
     
     :param bytespersamp: The depth of one sample in bytes
@@ -79,7 +106,7 @@ def mixsamples(bytespersamp, *waves):
         for byte in average:
             finalsamples[s] = byte
             s += 1
-
+    
     return bytes(finalsamples)
 
 
