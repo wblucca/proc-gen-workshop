@@ -29,6 +29,7 @@
       <w>octavenum</w>
       <w>outwav</w>
       <w>pianonum</w>
+      <w>plotwav</w>
       <w>pygame</w>
       <w>sampfreq</w>
       <w>samplebytes</w>
@@ -43,6 +44,7 @@
       <w>twoscompbytes</w>
       <w>twoscompint</w>
       <w>volceiling</w>
+      <w>wavfile</w>
       <w>writechord</w>
       <w>zerovolume</w>
     </words>

@@ -34,8 +34,6 @@ def main():
         # Write a chord
         chord = ['Db4', 'A4', 'E5']
         writechord(outwav, chord, DURATION)
-        
-        outwav.close()
 
 
 def writechord(outwav, notes, duration):
