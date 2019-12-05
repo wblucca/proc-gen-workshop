@@ -17,6 +17,9 @@ SAMP_WIDTH = BIT_DEPTH * NUM_CHANNELS // 8
 FRAMERATE = int(SAMP_FREQ * 1000)
 MAX_VOLUME = (256 ** (BIT_DEPTH // 8)) / 2 - 1
 
+DURATION = 1.0
+FADE_PERCENT = 0.1
+
 
 def main():
     """Initializes an audio file with some parameters and writes an audio wave
@@ -28,15 +31,9 @@ def main():
         outwav.setframerate(FRAMERATE)
         outwav.setnchannels(NUM_CHANNELS)
 
-        # Write some chords
-        chords = [
-            ['D4', 'A4'], 3,
-            ['D4', 'A#4'], 3,
-            ['D4', 'A4'], 3,
-            ['Db4', 'A4'], 3,
-        ]
-        for i in range(0, len(chords), 2):
-            writechord(outwav, chords[i], chords[i + 1])
+        # Write a chord
+        chord = ['Db4', 'A4', 'E5']
+        writechord(outwav, chord, DURATION)
         
         outwav.close()
 
@@ -52,7 +49,7 @@ def writechord(outwav, notes, duration):
     
     # Get their digital audio samples (expensive!)
     results = []
-    fade = 0.2 * duration
+    fade = FADE_PERCENT * duration
     for w in waves:
         results.append(pool.apply_async(
                 w.sinesamples,

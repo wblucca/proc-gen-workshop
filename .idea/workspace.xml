@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/William.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/William.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioGeneration/audiowave.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/audiowave.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioGeneration/multi_wave_evolution.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/multi_wave_evolution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioGeneration/output.wav" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/output.wav" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,9 +123,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.MultiWaveEvolution" />
       <item itemvalue="Python.LinearBoxBlur" />
       <item itemvalue="Python.MarkovWords" />
+      <item itemvalue="Python.MultiWaveEvolution" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -154,6 +151,7 @@
       <workItem from="1573222924940" duration="6214000" />
       <workItem from="1573313432089" duration="329000" />
       <workItem from="1574362835885" duration="45997000" />
+      <workItem from="1575558739852" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
