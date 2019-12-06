@@ -18,22 +18,21 @@ SAMP_WIDTH = BIT_DEPTH * NUM_CHANNELS // 8
 FRAMERATE = int(SAMP_FREQ * 1000)
 MAX_VOLUME = (256 ** (BIT_DEPTH // 8)) / 2 - 1
 
-DURATION = 0.8
-FADE_PERCENT = 0.1
+DURATION = 0.05
+FADE_PERCENT = 0.0
 
 
-def main():
-    """Initializes an audio file with some parameters and writes an audio wave
+def writechordtofile(filename, chord):
+    """Initializes an audio file and writes a chord of audio waves
     """
     
-    with wave.open('output.wav', 'wb') as outwav:
+    with wave.open(filename, 'wb') as outwav:
         # Setup audio file parameters
         outwav.setsampwidth(SAMP_WIDTH)
         outwav.setframerate(FRAMERATE)
         outwav.setnchannels(NUM_CHANNELS)
 
         # Write a chord
-        chord = ['A1', 'D2']
         writechord(outwav, chord, DURATION)
 
 
@@ -115,5 +114,7 @@ def mixsamples(bytespersamp, waves):
 
 
 if __name__ == '__main__':
-    main()
-    readwav('output.wav')
+    writechordtofile('output1.wav', ['E1'])
+    writechordtofile('output2.wav', ['E2'])
+    writechordtofile('output3.wav', ['E1', 'E2'])
+    readwav('output1.wav', 'output2.wav', 'output3.wav')

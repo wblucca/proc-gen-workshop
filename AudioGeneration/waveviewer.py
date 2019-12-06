@@ -5,7 +5,7 @@ import wave
 import matplotlib.pyplot as plt
 from AudioGeneration.audiowave import twoscompint
 
-MAX_TITLE_LEN = 30
+MAX_TITLE_LEN = 45
 
 
 def readwav(*files):
@@ -22,7 +22,7 @@ def readwav(*files):
             if i < numfiles - 1:
                 title += files[i] + ', '
             else:
-                title += 'and ' + files[i]
+                title += files[i]
 
     # Name the x axis
     plt.xlabel('Seconds')
