@@ -18,7 +18,7 @@ SAMP_WIDTH = BIT_DEPTH * NUM_CHANNELS // 8
 FRAMERATE = int(SAMP_FREQ * 1000)
 MAX_VOLUME = (256 ** (BIT_DEPTH // 8)) / 2 - 1
 
-DURATION = 0.1
+DURATION = 0.8
 FADE_PERCENT = 0.1
 
 
@@ -33,7 +33,7 @@ def main():
         outwav.setnchannels(NUM_CHANNELS)
 
         # Write a chord
-        chord = ['Db4', 'A4', 'E5']
+        chord = ['A1', 'D2']
         writechord(outwav, chord, DURATION)
 
 

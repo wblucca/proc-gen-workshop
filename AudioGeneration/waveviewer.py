@@ -62,7 +62,7 @@ def plotwav(wavfile, color):
         
         for i in range(numframes // sampwidth):
             # X-position in seconds
-            x[i] = i / framerate
+            x[i] = i * sampwidth / framerate
             
             # Get a sample and extract just this channel
             audiosample = wavfile.readframes(sampwidth)
