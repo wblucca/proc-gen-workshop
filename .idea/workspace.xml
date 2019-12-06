@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/William.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/William.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioGeneration/waveviewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/waveviewer.py" afterDir="false" />
     </list>
@@ -153,7 +154,7 @@
       <workItem from="1574362835885" duration="45997000" />
       <workItem from="1575558739852" duration="2468000" />
       <workItem from="1575572948024" duration="158000" />
-      <workItem from="1575641723508" duration="1493000" />
+      <workItem from="1575641723508" duration="2590000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Launchpad files and allow multiple file inputs">
       <created>1572584981229</created>
@@ -463,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575643226215</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Max title length">
+      <created>1575643325917</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1575643325917</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Try byte order 'little' instead, needs testing" />
     <MESSAGE value="Change SineWave class to generic wave, add square sampling" />
     <MESSAGE value="Change incrementing x to setting it based on i" />
     <MESSAGE value="Two's complement for wave function values" />
@@ -509,7 +516,8 @@
     <MESSAGE value="Begin waveviewer, remove close() within with clauses" />
     <MESSAGE value="Plotting stuff done, just need to get data points" />
     <MESSAGE value="More plotting setup, title, colors, axes, etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="More plotting setup, title, colors, axes, etc." />
+    <MESSAGE value="Max title length" />
+    <option name="LAST_COMMIT_MESSAGE" value="Max title length" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1573147631840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

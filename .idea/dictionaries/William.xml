@@ -2,10 +2,13 @@
   <dictionary name="William">
     <words>
       <w>addgeneratedsound</w>
+      <w>audiosample</w>
       <w>bitdepth</w>
       <w>bytearray</w>
+      <w>bytesample</w>
       <w>bytespersamp</w>
       <w>bytevalue</w>
+      <w>channelsample</w>
       <w>complementbits</w>
       <w>fademult</w>
       <w>fadeprogress</w>

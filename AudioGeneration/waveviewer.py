@@ -3,6 +3,7 @@
 
 import wave
 import matplotlib.pyplot as plt
+from AudioGeneration.audiowave import twoscompint
 
 MAX_TITLE_LEN = 30
 
@@ -54,7 +55,14 @@ def plotwav(wavfile, color):
         y = [0 for i in range(numframes)]
         
         for i in range(numframes):
-            # TODO get the actual data points
-            x[i] = 0
+            # X-position in seconds
+            x[i] = framerate * i
+            
+            # Get a sample and extract just this channel
+            audiosample = wavfile.getnframes(1)
+            channelsample = audiosample[i * sampwidth: (i+1) * sampwidth]
+            
+            # Y-value is signed int, not bytes
+            y[i] = twoscompint(channelsample, sampwidth)
         
         plt.plot(x, y, color)
