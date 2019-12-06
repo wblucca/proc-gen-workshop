@@ -45,11 +45,6 @@ def plotwav(wavfile, color):
     numchannels = wavfile.getnchannels()
     numframes = wavfile.getnframes()
     
-    print(sampwidth)
-    print(framerate)
-    print(numchannels)
-    print(numframes)
-    
     for channel in range(numchannels):
         # Setup this channel's plot
         plt.subplot(numchannels, 1, channel + 1)
@@ -74,5 +69,6 @@ def plotwav(wavfile, color):
             y[i] = twoscompint(channelsample, sampwidth // numchannels)
         
         plt.plot(x, y, color)
-        for i in range(len(x)):
-            print(x[i], y[i])
+    
+    # Return subplot to first plot
+    plt.subplot(numchannels, 1, 1)
