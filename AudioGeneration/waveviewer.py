@@ -7,6 +7,8 @@ from AudioGeneration.audiowave import twoscompint
 
 MAX_TITLE_LEN = 45
 
+# List of axes for plotting on
+axes = []
 
 def readwav(*files):
     # Plot title
@@ -45,9 +47,12 @@ def plotwav(wavfile, color):
     numchannels = wavfile.getnchannels()
     numframes = wavfile.getnframes()
     
+    # Create axes
+    
     for channel in range(numchannels):
-        # Setup this channel's plot
-        plt.subplot(numchannels, 1, channel + 1)
+        # Setup this channel's plot (if it doesn't exist)
+        if channel > len(axes) - 1:
+            axes.insert(channel, plt.subplot(numchannels, 1, channel + 1))
         
         # Declare x and y values for this plot
         x = [0 for i in range(numframes // sampwidth)]
@@ -68,7 +73,4 @@ def plotwav(wavfile, color):
             # Y-value is signed int, not bytes
             y[i] = twoscompint(channelsample, sampwidth // numchannels)
         
-        plt.plot(x, y, color)
-    
-    # Return subplot to first plot
-    plt.subplot(numchannels, 1, 1)
+        axes[channel].plot(x, y, color)
