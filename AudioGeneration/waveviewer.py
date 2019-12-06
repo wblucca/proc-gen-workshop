@@ -4,6 +4,8 @@
 import wave
 import matplotlib.pyplot as plt
 
+MAX_TITLE_LEN = 30
+
 
 def readwav(*files):
     # Plot title
@@ -25,6 +27,8 @@ def readwav(*files):
     plt.xlabel('Seconds')
 
     # Give title to plot
+    if len(title) > MAX_TITLE_LEN:
+        title = str(numfiles) + ' Files'
     plt.title(title)
     
     # Show the plot
