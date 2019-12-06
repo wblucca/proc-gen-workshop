@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
+    <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="View">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioGeneration/waveviewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/AudioGeneration/waveviewer.py" afterDir="false" />
     </list>
@@ -153,14 +153,7 @@
       <workItem from="1574362835885" duration="45997000" />
       <workItem from="1575558739852" duration="2468000" />
       <workItem from="1575572948024" duration="158000" />
-      <workItem from="1575641723508" duration="8290000" />
-    </task>
-    <task id="LOCAL-00003" summary="Add word pair helper function when constructing dictionary">
-      <created>1572617084661</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1572617084661</updated>
+      <workItem from="1575641723508" duration="9064000" />
     </task>
     <task id="LOCAL-00004" summary="Markov generator working with specified starting word">
       <created>1572618925420</created>
@@ -498,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575659538352</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="No more deprecation warnings for matplotlib.subplot">
+      <created>1575660052635</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1575660052635</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Rename files, python convention" />
     <MESSAGE value="Rename files again, python convention" />
     <MESSAGE value="Mix samples implemented, but needs testing" />
     <MESSAGE value="Mix samples looking better, not quite working" />
@@ -544,14 +543,15 @@
     <MESSAGE value="waveviewer working as intended" />
     <MESSAGE value="Fix title position for multi-channel audio" />
     <MESSAGE value="Allow writing multiple wav files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow writing multiple wav files" />
+    <MESSAGE value="No more deprecation warnings for matplotlib.subplot" />
+    <option name="LAST_COMMIT_MESSAGE" value="No more deprecation warnings for matplotlib.subplot" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1573147631840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProcGenFun$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1572568636047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$note.coverage" NAME="note Coverage Results" MODIFIED="1574780557789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1574780666702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proc_gen_workshop$MultiWaveEvolution.coverage" NAME="MultiWaveEvolution Coverage Results" MODIFIED="1575660009256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
+    <SUITE FILE_PATH="coverage/proc_gen_workshop$MultiWaveEvolution.coverage" NAME="MultiWaveEvolution Coverage Results" MODIFIED="1575660697058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
     <SUITE FILE_PATH="coverage/ProcGenFun$MarkovWords.coverage" NAME="MarkovWords Coverage Results" MODIFIED="1572582966969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$SineWave.coverage" NAME="SineWave Coverage Results" MODIFIED="1573146022180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
   </component>

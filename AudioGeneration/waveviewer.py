@@ -2,6 +2,8 @@
 # William Lucca
 
 import wave
+from random import random
+
 import matplotlib.pyplot as plt
 from AudioGeneration.audiowave import twoscompint
 
@@ -9,6 +11,7 @@ MAX_TITLE_LEN = 45
 
 # List of axes for plotting on
 axes = []
+
 
 def readwav(*files):
     # Plot title
@@ -25,10 +28,14 @@ def readwav(*files):
                 title += files[i] + ', '
             else:
                 title += files[i]
-
+    
     # Name the x axis
     plt.xlabel('Seconds')
-
+    
+    # Switch back to top subplot
+    if len(axes) > 0:
+        plt.sca(axes[0])
+    
     # Give title to plot
     if len(title) > MAX_TITLE_LEN:
         title = str(numfiles) + ' Files'
@@ -47,8 +54,6 @@ def plotwav(wavfile, color):
     numchannels = wavfile.getnchannels()
     numframes = wavfile.getnframes()
     
-    # Create axes
-    
     for channel in range(numchannels):
         # Setup this channel's plot (if it doesn't exist)
         if channel > len(axes) - 1:
@@ -66,8 +71,8 @@ def plotwav(wavfile, color):
             
             # Get a sample and extract just this channel
             audiosample = wavfile.readframes(sampwidth)
-            start = (channel // numchannels) * sampwidth
-            end = ((channel + 1) // numchannels) * sampwidth
+            start = channel * sampwidth // numchannels
+            end = (channel + 1) * sampwidth // numchannels
             channelsample = audiosample[start: end]
             
             # Y-value is signed int, not bytes
