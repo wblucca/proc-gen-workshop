@@ -30,6 +30,8 @@ def readwav(*files):
     # Give title to plot
     if len(title) > MAX_TITLE_LEN:
         title = str(numfiles) + ' Files'
+    if numfiles == 1:
+        title = files[0]
     plt.title(title)
     
     # Show the plot
@@ -43,24 +45,28 @@ def plotwav(wavfile, color):
     numchannels = wavfile.getnchannels()
     numframes = wavfile.getnframes()
     
-    # Get the width of a single sample for a single channel
-    sampwidth //= numchannels
+    print(sampwidth)
+    print(framerate)
+    print(numchannels)
+    print(numframes)
     
     for channel in range(numchannels):
         # Setup this channel's plot
-        plt.subplot(3, 1, channel)
+        plt.subplot(numchannels, 1, channel + 1)
         
         # Declare x and y values for this plot
         x = [0 for i in range(numframes)]
         y = [0 for i in range(numframes)]
         
-        for i in range(numframes):
+        for i in range(numframes // sampwidth):
             # X-position in seconds
             x[i] = framerate * i
             
             # Get a sample and extract just this channel
-            audiosample = wavfile.getnframes(1)
-            channelsample = audiosample[i * sampwidth: (i+1) * sampwidth]
+            audiosample = wavfile.readframes(sampwidth)
+            start = (channel // numchannels) * sampwidth
+            end = ((channel + 1) // numchannels) * sampwidth
+            channelsample = audiosample[start: end]
             
             # Y-value is signed int, not bytes
             y[i] = twoscompint(channelsample, sampwidth)

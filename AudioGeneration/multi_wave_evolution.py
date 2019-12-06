@@ -5,6 +5,7 @@ import wave
 import multiprocessing
 from AudioGeneration.audiowave import *
 from AudioGeneration.note import *
+from AudioGeneration.waveviewer import readwav
 
 # Standard audio quality: 16-bit, 44.1kHz
 
@@ -17,7 +18,7 @@ SAMP_WIDTH = BIT_DEPTH * NUM_CHANNELS // 8
 FRAMERATE = int(SAMP_FREQ * 1000)
 MAX_VOLUME = (256 ** (BIT_DEPTH // 8)) / 2 - 1
 
-DURATION = 1.0
+DURATION = 0.1
 FADE_PERCENT = 0.1
 
 
@@ -115,3 +116,4 @@ def mixsamples(bytespersamp, waves):
 
 if __name__ == '__main__':
     main()
+    readwav('output.wav')
