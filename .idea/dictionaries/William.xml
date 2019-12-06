@@ -19,6 +19,7 @@
       <w>mixsamples</w>
       <w>numbytes</w>
       <w>numchannels</w>
+      <w>numfiles</w>
       <w>numframes</w>
       <w>numsamp</w>
       <w>numsamples</w>
@@ -31,6 +32,7 @@
       <w>pianonum</w>
       <w>plotwav</w>
       <w>pygame</w>
+      <w>readwav</w>
       <w>sampfreq</w>
       <w>samplebytes</w>
       <w>sampvol</w>

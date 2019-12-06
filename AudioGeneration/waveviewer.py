@@ -6,12 +6,32 @@ import matplotlib.pyplot as plt
 
 
 def readwav(*files):
-    for file in files:
-        with wave.open(file, 'rb') as wavfile:
-            plotwav(wavfile)
+    # Plot title
+    title = ''
+    
+    numfiles = len(files)
+    for i in range(numfiles):
+        with wave.open(files[i], 'rb') as wavfile:
+            # Plot file
+            plotwav(wavfile, 'C' + str(i))
+            
+            # Update title
+            if i < numfiles - 1:
+                title += files[i] + ', '
+            else:
+                title += 'and ' + files[i]
+
+    # Name the x axis
+    plt.xlabel('Seconds')
+
+    # Give title to plot
+    plt.title(title)
+    
+    # Show the plot
+    plt.show()
 
 
-def plotwav(wavfile):
+def plotwav(wavfile, color):
     # Get wav file parameters
     sampwidth = wavfile.getsampwidth()
     framerate = wavfile.getframerate()
@@ -25,34 +45,12 @@ def plotwav(wavfile):
         # Setup this channel's plot
         plt.subplot(3, 1, channel)
         
-        # Define x and y values for this plot
-        x, y = [], []
+        # Declare x and y values for this plot
+        x = [0 for i in range(numframes)]
+        y = [0 for i in range(numframes)]
         
         for i in range(numframes):
             # TODO get the actual data points
-            pass
+            x[i] = 0
         
-        plt.plot(x, y, 'C' + str(channel))
-        
-        
-        
-    
-
-# x axis values
-x = [1, 2, 3]
-# corresponding y axis values
-y = [2, 4, 1]
-
-# plotting the points
-plt.plot(x, y)
-
-# naming the x axis
-plt.xlabel('x - axis')
-# naming the y axis
-plt.ylabel('y - axis')
-
-# giving a title to my graph
-plt.title('My first graph!')
-
-# function to show the plot
-plt.show()
+        plt.plot(x, y, color)
