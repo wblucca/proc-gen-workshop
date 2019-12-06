@@ -55,12 +55,14 @@ def plotwav(wavfile, color):
         plt.subplot(numchannels, 1, channel + 1)
         
         # Declare x and y values for this plot
-        x = [0 for i in range(numframes)]
-        y = [0 for i in range(numframes)]
+        x = [0 for i in range(numframes // sampwidth)]
+        y = [0 for i in range(numframes // sampwidth)]
+        
+        wavfile.setpos(0)
         
         for i in range(numframes // sampwidth):
             # X-position in seconds
-            x[i] = framerate * i
+            x[i] = i / framerate
             
             # Get a sample and extract just this channel
             audiosample = wavfile.readframes(sampwidth)
@@ -69,6 +71,8 @@ def plotwav(wavfile, color):
             channelsample = audiosample[start: end]
             
             # Y-value is signed int, not bytes
-            y[i] = twoscompint(channelsample, sampwidth)
+            y[i] = twoscompint(channelsample, sampwidth // numchannels)
         
         plt.plot(x, y, color)
+        for i in range(len(x)):
+            print(x[i], y[i])
