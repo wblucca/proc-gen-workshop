@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ImageGeneration/test1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneration/markov_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/markov_images.py" afterDir="false" />
     </list>
@@ -180,14 +179,7 @@
       <workItem from="1575641723508" duration="9091000" />
       <workItem from="1575746687155" duration="760000" />
       <workItem from="1582056219694" duration="1011000" />
-      <workItem from="1582064306232" duration="2077000" />
-    </task>
-    <task id="LOCAL-00007" summary="Add optional separator when generating strings (ont checked for terminal case)">
-      <created>1572626732901</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1572626732901</updated>
+      <workItem from="1582064306232" duration="3832000" />
     </task>
     <task id="LOCAL-00008" summary="Check for different terminal punctuation">
       <created>1572627388517</created>
@@ -525,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582065220032</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Markov data can be populated from image files">
+      <created>1582066429372</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1582066429372</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Use bytearrays when building samples" />
     <MESSAGE value="Pick some cool sample notes" />
     <MESSAGE value="Begin Note class" />
     <MESSAGE value="Initialize bytearray size for efficiency" />
@@ -571,10 +569,11 @@
     <MESSAGE value="View multi-channel wav files working" />
     <MESSAGE value="Begin Markov image generator" />
     <MESSAGE value="record_pair function complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="record_pair function complete" />
+    <MESSAGE value="Markov data can be populated from image files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Markov data can be populated from image files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/proc_gen_workshop$markov_images.coverage" NAME="markov_images Coverage Results" MODIFIED="1582066386496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImageGeneration" />
+    <SUITE FILE_PATH="coverage/proc_gen_workshop$markov_images.coverage" NAME="markov_images Coverage Results" MODIFIED="1582068848353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImageGeneration" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1573147631840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProcGenFun$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1572568636047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$note.coverage" NAME="note Coverage Results" MODIFIED="1574780557789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
