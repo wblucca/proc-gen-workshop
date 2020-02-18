@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ImageGeneration/markov_images.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneration/markov_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/markov_images.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,14 +155,8 @@
       <workItem from="1575572948024" duration="158000" />
       <workItem from="1575641723508" duration="9091000" />
       <workItem from="1575746687155" duration="760000" />
-      <workItem from="1582056219694" duration="981000" />
-    </task>
-    <task id="LOCAL-00005" summary="Account for no valid word choice or word not in dictionary">
-      <created>1572625933674</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1572625933674</updated>
+      <workItem from="1582056219694" duration="1011000" />
+      <workItem from="1582064306232" duration="884000" />
     </task>
     <task id="LOCAL-00006" summary="Record starting words and start new strings with them">
       <created>1572626611461</created>
@@ -500,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575660797188</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Begin Markov image generator">
+      <created>1582057945517</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1582057945517</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +522,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mix samples implemented, but needs testing" />
     <MESSAGE value="Mix samples looking better, not quite working" />
     <MESSAGE value="Use bytearrays when building samples" />
     <MESSAGE value="Pick some cool sample notes" />
@@ -546,7 +546,8 @@
     <MESSAGE value="Allow writing multiple wav files" />
     <MESSAGE value="No more deprecation warnings for matplotlib.subplot" />
     <MESSAGE value="View multi-channel wav files working" />
-    <option name="LAST_COMMIT_MESSAGE" value="View multi-channel wav files working" />
+    <MESSAGE value="Begin Markov image generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begin Markov image generator" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1573147631840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
