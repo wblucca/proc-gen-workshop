@@ -5,7 +5,7 @@ import random
 from PIL import Image
 
 # Command line options
-OPTIONS = ['-h', '-s', '-W', '-H', '-o']
+OPTIONS = ['-h', '-W', '-H', '-o', '-s']
 
 # Default settings
 DEFAULT_WIDTH = 300
@@ -44,7 +44,16 @@ def create_image(width, height):
 
 
 def printhelp():
-    pass
+    # Print basic usage
+    print('\nUsage:  markov_images.py',
+          '[-h] [-W WIDTH] [-H HEIGHT] [-o PATH] [-s SEED]\n')
+    
+    # Print description of each option
+    print('[' + OPTIONS[0] + ']\t\tDisplay this help message')
+    print('[' + OPTIONS[1] + ' WIDTH]\tSet the width of the output image')
+    print('[' + OPTIONS[2] + ' HEIGHT]\tSet the height of the output image')
+    print('[' + OPTIONS[3] + ' PATH]\tSet the filepath for the output image')
+    print('[' + OPTIONS[4] + ' SEED]\tSet the seed for the random generator')
     
 
 if __name__ == '__main__':
