@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ImageGeneration/test1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneration/markov_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/markov_images.py" afterDir="false" />
     </list>
@@ -55,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MultiWaveEvolution">
+  <component name="RunManager" selected="Python.markov_images">
     <configuration name="LinearBoxBlur" type="PythonConfigurationType" factoryName="Python">
       <module name="proc-gen-workshop" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,10 +123,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="markov_images" type="PythonConfigurationType" factoryName="Python">
+      <module name="proc-gen-workshop" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImageGeneration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImageGeneration/markov_images.py" />
+      <option name="PARAMETERS" value="test1.png" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.LinearBoxBlur" />
       <item itemvalue="Python.MarkovWords" />
       <item itemvalue="Python.MultiWaveEvolution" />
+      <item itemvalue="Python.markov_images" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -156,14 +180,7 @@
       <workItem from="1575641723508" duration="9091000" />
       <workItem from="1575746687155" duration="760000" />
       <workItem from="1582056219694" duration="1011000" />
-      <workItem from="1582064306232" duration="884000" />
-    </task>
-    <task id="LOCAL-00006" summary="Record starting words and start new strings with them">
-      <created>1572626611461</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1572626611461</updated>
+      <workItem from="1582064306232" duration="2077000" />
     </task>
     <task id="LOCAL-00007" summary="Add optional separator when generating strings (ont checked for terminal case)">
       <created>1572626732901</created>
@@ -501,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582057945517</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="record_pair function complete">
+      <created>1582065220031</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1582065220032</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mix samples looking better, not quite working" />
     <MESSAGE value="Use bytearrays when building samples" />
     <MESSAGE value="Pick some cool sample notes" />
     <MESSAGE value="Begin Note class" />
@@ -547,9 +570,11 @@
     <MESSAGE value="No more deprecation warnings for matplotlib.subplot" />
     <MESSAGE value="View multi-channel wav files working" />
     <MESSAGE value="Begin Markov image generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Begin Markov image generator" />
+    <MESSAGE value="record_pair function complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="record_pair function complete" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/proc_gen_workshop$markov_images.coverage" NAME="markov_images Coverage Results" MODIFIED="1582066386496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImageGeneration" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1573147631840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ProcGenFun$LinearBoxBlur.coverage" NAME="LinearBoxBlur Coverage Results" MODIFIED="1572568636047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proc_gen_workshop$note.coverage" NAME="note Coverage Results" MODIFIED="1574780557789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AudioGeneration" />
