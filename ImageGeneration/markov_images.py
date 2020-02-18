@@ -4,7 +4,15 @@ import sys
 import random
 from PIL import Image
 
+# Command line options
+OPTIONS = ['-h', '-s', '-W', '-H', '-o']
 
+# Default settings
+DEFAULT_WIDTH = 300
+DEFAULT_HEIGHT = 300
+DEFAULT_OUT_PATH = 'markov_image.png'
+
+# Other globals
 num_pairs = 0
 markov_data = dict()
 
@@ -33,25 +41,43 @@ def create_image(width, height):
     for color2 in markov_data.items():
         for count in color2.items():
             pass
+
+
+def printhelp():
+    pass
     
 
 if __name__ == '__main__':
-    # Get images from input and add to markov data
+    # Initialize variables for image creation
+    width = DEFAULT_WIDTH
+    height = DEFAULT_HEIGHT
+    out_path = DEFAULT_OUT_PATH
+    
+    # Iterate over command line arguments
+    argv = ''
     for i in range(1, len(sys.argv)):
-        # Get argument
-        prev = sys.argv[i - 1]
+        # Get argument and potential option flag
+        prev = argv
         argv = sys.argv[i]
 
-        if argv == '-s' or argv == '--seed':
+        if argv == '-h':
+            # Display usage information
+            printhelp()
+            exit(0)
+        elif argv in OPTIONS:
             continue
-        elif prev == '-s' or prev == '--seed':
+        elif prev == '-s':
             # Set random seed
             random.seed(argv)
-            print(argv)
-        elif argv == '-h' or argv == '--help':
-            # Display usage information
-            print('\nUsage:\tmarkov_images.py [-s|--seed SEED] IMAGE_FILES...')
-            exit(0)
+        elif prev == '-W':
+            # Set output image width
+            width = int(argv)
+        elif prev == '-H':
+            # Set output image height
+            height = int(argv)
+        elif prev == '-o':
+            # Set output image filepath
+            out_path = argv
         else:
             # Process images
             image = Image.open(argv)
@@ -65,5 +91,5 @@ if __name__ == '__main__':
                                 image.getpixel((x, y - 1)))
             image.close()
         
-        # Create an image
-        # TODO
+    # Create an image
+    # TODO
