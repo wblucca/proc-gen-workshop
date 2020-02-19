@@ -72,24 +72,37 @@ def pick_next_color(prev_color):
     return pick_random_color()
 
 
+def select_random_color(color1, color2):
+    if random.random() < 0.5:
+        return color1
+    return color2
+
+
 def create_image(width, height):
     # Create image file
     out_image = Image.new('RGBA', (width, height))
     
-    # All the other pixels
+    # Calculate pixel colors
     for w in range(width):
-        if w == 0:
-            # Starting pixel
-            out_image.putpixel((0, 0), pick_random_color())
-        else:
-            # Get next pixel from left pixel
-            color = pick_next_color(out_image.getpixel((w - 1, 0)))
-            out_image.putpixel((w, 0), color)
-        
-        for h in range(1, height):
-            # Fill the rest of the column down
-            color = pick_next_color(out_image.getpixel((w, h - 1)))
-            out_image.putpixel((w, h), color)
+        for h in range(height):
+            if (w, h) == (0, 0):
+                # Starting pixel
+                out_image.putpixel((0, 0), pick_random_color())
+            elif h == 0:
+                # Get next pixel from left pixel
+                color = pick_next_color(out_image.getpixel((w - 1, h)))
+                out_image.putpixel((w, 0), color)
+            elif w == 0:
+                # Get next pixel from top pixel
+                color = pick_next_color(out_image.getpixel((w, h - 1)))
+                out_image.putpixel((w, h), color)
+            else:
+                # Get next pixel from either top or left (50/50)
+                if random.random() < 0.5:
+                    color = pick_next_color(out_image.getpixel((w - 1, h)))
+                else:
+                    color = pick_next_color(out_image.getpixel((w, h - 1)))
+                out_image.putpixel((w, h), color)
     
     return out_image
 
