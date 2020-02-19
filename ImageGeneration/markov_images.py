@@ -25,6 +25,12 @@ def record_pair(color1, color2):
     # Keep track of how many data points have been added
     num_pairs += 1
     
+    # Use RGBA mode
+    if len(color1) <= 3:
+        color1 = (color1[0], color1[1], color1[2], 255)
+    if len(color2) <= 3:
+        color2 = (color2[0], color2[1], color2[2], 255)
+    
     # Add pair to dicts
     if color1 not in markov_data:
         markov_data[color1] = {color2: 1}
@@ -71,19 +77,19 @@ def create_image(width, height):
     out_image = Image.new('RGBA', (width, height))
     
     # All the other pixels
-    for x in range(width):
-        if x == 0:
+    for w in range(width):
+        if w == 0:
             # Starting pixel
             out_image.putpixel((0, 0), pick_random_color())
         else:
             # Get next pixel from left pixel
-            color = pick_next_color(out_image.getpixel((x - 1, 0)))
-            out_image.putpixel((x, 0), color)
+            color = pick_next_color(out_image.getpixel((w - 1, 0)))
+            out_image.putpixel((w, 0), color)
         
-        for y in range(1, height):
+        for h in range(1, height):
             # Fill the rest of the column down
-            color = pick_next_color(out_image.getpixel((x, y - 1)))
-            out_image.putpixel((x, y), color)
+            color = pick_next_color(out_image.getpixel((w, h - 1)))
+            out_image.putpixel((w, h), color)
     
     return out_image
 

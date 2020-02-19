@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ImageGeneration/output_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImageGeneration/test1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneration/markov_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/markov_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneration/output_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/output_image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageGeneration/test1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/test1.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,14 +183,7 @@
       <workItem from="1575746687155" duration="760000" />
       <workItem from="1582056219694" duration="1011000" />
       <workItem from="1582064306232" duration="5175000" />
-      <workItem from="1582071262987" duration="3366000" />
-    </task>
-    <task id="LOCAL-00010" summary="Word limit, new line resets word pair, Star Wars training data">
-      <created>1572635363817</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1572635363817</updated>
+      <workItem from="1582071262987" duration="5169000" />
     </task>
     <task id="LOCAL-00011" summary="Organize files by what is being generated">
       <created>1573139313337</created>
@@ -526,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582069791374</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Image is generating!">
+      <created>1582074652554</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1582074652555</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initialize bytearray size for efficiency" />
     <MESSAGE value="Get note frequency by name" />
     <MESSAGE value="Get note frequency and number by name done" />
     <MESSAGE value="Shorter duration wav file for time reasons" />
@@ -572,7 +573,8 @@
     <MESSAGE value="Markov data can be populated from image files" />
     <MESSAGE value="Begin create_image function and add new command line options" />
     <MESSAGE value="More command line options" />
-    <option name="LAST_COMMIT_MESSAGE" value="More command line options" />
+    <MESSAGE value="Image is generating!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image is generating!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$markov_images.coverage" NAME="markov_images Coverage Results" MODIFIED="1582071985604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImageGeneration" />
