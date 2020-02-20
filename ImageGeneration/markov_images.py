@@ -17,6 +17,10 @@ num_pairs = 0
 first_color_count = dict()
 markov_data = dict()
 
+# Offsets for iterating over neighbors
+DX = [0, 1, 1, 1, 0, -1, -1, -1]
+DY = [-1, -1, 0, 1, 1, 1, 0, -1]
+
 
 def record_pair(color1, color2):
     """Add a single pixel color pair to the markov pairs data"""
@@ -26,10 +30,8 @@ def record_pair(color1, color2):
     num_pairs += 1
     
     # Use RGBA mode
-    if len(color1) <= 3:
-        color1 = (color1[0], color1[1], color1[2], 255)
-    if len(color2) <= 3:
-        color2 = (color2[0], color2[1], color2[2], 255)
+    color1 = getRGBA(color1)
+    color2 = getRGBA(color2)
     
     # Add pair to dicts
     if color1 not in markov_data:
@@ -78,7 +80,7 @@ def select_random_color(color1, color2):
     return color2
 
 
-def create_image(width, height):
+def create_image_from_corner(width, height):
     # Create image file
     out_image = Image.new('RGBA', (width, height))
     
@@ -107,6 +109,42 @@ def create_image(width, height):
     return out_image
 
 
+def color_point_from_neighbors(x, y, image):
+    # Iterate over neighbors and consider colors that exist in markov data
+    neighbor_colors = []
+    for i in range(len(DX)):
+        color = image.getpixel((x + DX[i], y + DY[i]))
+        if color in markov_data:
+            neighbor_colors.append(color)
+    
+    # No markov neighbors returns random color
+    if len(neighbor_colors) == 0:
+        return pick_random_color()
+    
+    # Pick random neighbor color to use data from
+    return pick_next_color(random.choice(neighbor_colors))
+
+
+def create_image_from_point(x, y, width, height):
+    # Create image file
+    out_image = Image.new('RGBA', (width, height))
+    
+    return out_image
+
+
+def getRGBA(color):
+    num_channels = len(color)
+    colorRGBA = []
+    for i in range(4):
+        if i <= num_channels:
+            colorRGBA.append(color[i])
+        else:
+            colorRGBA.append(255)
+    
+    # Convert to tuple
+    return tuple(colorRGBA)
+
+
 def printhelp():
     # Print basic usage
     print('\nUsage:  markov_images.py',
@@ -122,9 +160,9 @@ def printhelp():
                              '(default "output_image.png")')
     print('[' + OPTIONS[4] + ' SEED]\tSet the seed for the random generator '
                              '(uses random seed by default)')
-    
 
-if __name__ == '__main__':
+
+def main():
     # Initialize variables for image creation
     img_width = DEFAULT_WIDTH
     img_height = DEFAULT_HEIGHT
@@ -136,7 +174,7 @@ if __name__ == '__main__':
         # Get argument and potential option flag
         prev = argv
         argv = sys.argv[i]
-
+        
         if argv == '-h':
             # Display usage information
             printhelp()
@@ -167,9 +205,13 @@ if __name__ == '__main__':
                     record_pair(image.getpixel((x, y)),
                                 image.getpixel((x, y - 1)))
             image.close()
-        
+    
     # Create an image
-    out = create_image(img_width, img_height)
+    out = create_image_from_point(100, 100, img_width, img_height)
     out.save(out_path)
     print('Success! Image "' + out_path + '" has been generated.')
     exit(0)
+
+
+if __name__ == '__main__':
+    main()
