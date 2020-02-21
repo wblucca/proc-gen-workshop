@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ImageGeneration/rainbow.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneration/markov_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/markov_images.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneration/output_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/output_image.png" afterDir="false" />
@@ -182,14 +183,7 @@
       <workItem from="1582056219694" duration="1011000" />
       <workItem from="1582064306232" duration="5175000" />
       <workItem from="1582071262987" duration="8862000" />
-      <workItem from="1582227940450" duration="2446000" />
-    </task>
-    <task id="LOCAL-00013" summary="Write wav file parameters to header">
-      <created>1573141934567</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1573141934567</updated>
+      <workItem from="1582227940450" duration="7067000" />
     </task>
     <task id="LOCAL-00014" summary="Move SineWave into its own file">
       <created>1573143650147</created>
@@ -527,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582076615261</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Fix outer scope shadowing, add color_point_from_neighbors">
+      <created>1582230865122</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1582230865124</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Shorter duration wav file for time reasons" />
     <MESSAGE value="Use loops instead of a bunch of copy/paste" />
     <MESSAGE value="Update a docstring" />
     <MESSAGE value="Fix note names and write chords individually" />
@@ -573,7 +573,8 @@
     <MESSAGE value="Image is generating!" />
     <MESSAGE value="Works with jpgs and pngs" />
     <MESSAGE value="Delete bananas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete bananas" />
+    <MESSAGE value="Fix outer scope shadowing, add color_point_from_neighbors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix outer scope shadowing, add color_point_from_neighbors" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$markov_images.coverage" NAME="markov_images Coverage Results" MODIFIED="1582084144416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImageGeneration" />

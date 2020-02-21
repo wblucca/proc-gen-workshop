@@ -2,6 +2,7 @@
 
 import sys
 import random
+import queue
 from PIL import Image
 
 # Command line options
@@ -18,8 +19,8 @@ first_color_count = dict()
 markov_data = dict()
 
 # Offsets for iterating over neighbors
-DX = [0, 1, 1, 1, 0, -1, -1, -1]
-DY = [-1, -1, 0, 1, 1, 1, 0, -1]
+DX = [0, 1, 0, -1]
+DY = [-1, 0, 1, 0]
 
 
 def record_pair(color1, color2):
@@ -109,13 +110,17 @@ def create_image_from_corner(width, height):
     return out_image
 
 
-def color_point_from_neighbors(x, y, image):
+def color_point_from_neighbors(xy0, image):
     # Iterate over neighbors and consider colors that exist in markov data
     neighbor_colors = []
     for i in range(len(DX)):
-        color = image.getpixel((x + DX[i], y + DY[i]))
-        if color in markov_data:
-            neighbor_colors.append(color)
+        xy = (xy0[0] + DX[i], xy0[1] + DY[i])
+        
+        # Add neighbor if in bounds of image
+        if in_bounds(xy, image):
+            color = image.getpixel(xy)
+            if color in markov_data:
+                neighbor_colors.append(color)
     
     # No markov neighbors returns random color
     if len(neighbor_colors) == 0:
@@ -125,18 +130,43 @@ def color_point_from_neighbors(x, y, image):
     return pick_next_color(random.choice(neighbor_colors))
 
 
-def create_image_from_point(x, y, width, height):
+def create_image_from_point(x0, y0, width, height):
     # Create image file
     out_image = Image.new('RGBA', (width, height))
+    num_pixels = width * height
+    
+    # Iterate over all pixels
+    to_color = queue.PriorityQueue()
+    colored = set()
+    to_color.put((0, (x0, y0)))
+    while not to_color.empty():
+        # Color next pixel
+        xy = to_color.get()[1]
+        color = color_point_from_neighbors(xy, out_image)
+        out_image.putpixel(xy, color)
+        
+        # Add adjacent pixels to queue/colored set
+        for i in range(len(DX)):
+            adj_xy = (xy[0] + DX[i], xy[1] + DY[i])
+            if in_bounds(adj_xy, out_image) and adj_xy not in colored:
+                colored.add(adj_xy)
+                to_color.put((random.randrange(0, num_pixels), adj_xy))
     
     return out_image
+
+
+def in_bounds(xy, image):
+    x, y = xy[0], xy[1]
+    if 0 <= x < image.width and 0 <= y < image.height:
+        return True
+    return False
 
 
 def getRGBA(color):
     num_channels = len(color)
     colorRGBA = []
     for i in range(4):
-        if i <= num_channels:
+        if i < num_channels:
             colorRGBA.append(color[i])
         else:
             colorRGBA.append(255)
@@ -164,8 +194,8 @@ def printhelp():
 
 def main():
     # Initialize variables for image creation
-    img_width = DEFAULT_WIDTH
-    img_height = DEFAULT_HEIGHT
+    width = DEFAULT_WIDTH
+    height = DEFAULT_HEIGHT
     out_path = DEFAULT_OUT_PATH
     
     # Iterate over command line arguments
@@ -186,10 +216,10 @@ def main():
             random.seed(argv)
         elif prev == '-W':
             # Set output image width
-            img_width = int(argv)
+            width = int(argv)
         elif prev == '-H':
             # Set output image height
-            img_height = int(argv)
+            height = int(argv)
         elif prev == '-o':
             # Set output image filepath
             out_path = argv
@@ -207,7 +237,7 @@ def main():
             image.close()
     
     # Create an image
-    out = create_image_from_point(100, 100, img_width, img_height)
+    out = create_image_from_point(width // 2, height // 2, width, height)
     out.save(out_path)
     print('Success! Image "' + out_path + '" has been generated.')
     exit(0)
