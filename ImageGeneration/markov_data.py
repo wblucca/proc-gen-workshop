@@ -74,3 +74,23 @@ def getRGBA(color):
     
     # Convert to tuple
     return tuple(colorRGBA)
+
+
+def get_color_int(rgba):
+    num = 0
+    for channel in rgba:
+        # Add channel value to appropriate bits
+        num <<= 8
+        num += channel
+    
+    return num
+
+
+def get_color_tuple(num):
+    rgba = [0 for i in range(4)]
+    for i in range(3, -1, -1):
+        # Add channel value to appropriate bits
+        rgba[i] = num % 256
+        num >>= 8
+    
+    return tuple(rgba)
