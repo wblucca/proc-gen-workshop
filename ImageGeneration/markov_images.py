@@ -4,11 +4,12 @@
 import sys
 import random
 import queue
+import pickle
 from markov_data import MarkovData
 from PIL import Image
 
 # Command line options
-OPTIONS = ['-h', '-W', '-H', '-o', '-s']
+OPTIONS = ['-h', '-W', '-H', '-o', '-s', '-wm', '-rm']
 
 # Default settings
 DEFAULT_WIDTH = 300
@@ -68,6 +69,19 @@ def create_image_from_point(x0, y0, width, height):
     return out_image
 
 
+def analyze_image(path):
+    image = Image.open(path)
+    for x in range(1, image.width):
+        for y in range(1, image.height):
+            # Add color pair from left to right
+            markov_data.record_pair(image.getpixel((x, y)),
+                                    image.getpixel((x - 1, y)))
+            # Add color pair from top to bottom
+            markov_data.record_pair(image.getpixel((x, y)),
+                                    image.getpixel((x, y - 1)))
+    image.close()
+
+
 def in_bounds(xy, image):
     x, y = xy[0], xy[1]
     if 0 <= x < image.width and 0 <= y < image.height:
@@ -90,13 +104,26 @@ def printhelp():
                              '(default "output_image.png")')
     print('[' + OPTIONS[4] + ' SEED]\tSet the seed for the random generator '
                              '(uses random seed by default)')
+    print('[' + OPTIONS[5] + ' FILE]\tWrite the markov data to a given file')
+    print('[' + OPTIONS[6] + ' FILE]\tRead the markov data to a given file')
 
 
 def main():
+    global markov_data
+    
     # Initialize variables for image creation
     width = DEFAULT_WIDTH
     height = DEFAULT_HEIGHT
-    out_path = DEFAULT_OUT_PATH
+    out_img_path = DEFAULT_OUT_PATH
+    
+    # Initialize variables for storing markov data
+    should_read_markov = False
+    in_markov_path = ''
+    should_write_markov = False
+    out_markov_path = ''
+    
+    # Images to analyze
+    to_analyze = []
     
     # Iterate over command line arguments
     argv = ''
@@ -122,24 +149,36 @@ def main():
             height = int(argv)
         elif prev == '-o':
             # Set output image filepath
-            out_path = argv
+            out_img_path = argv
+        elif prev == '-wm':
+            # Set the output markov data filepath
+            should_write_markov = True
+            out_markov_path = argv
+        elif prev == '-rm':
+            # Set the input markov data filepath
+            should_read_markov = True
+            in_markov_path = argv
         else:
-            # Process images
-            image = Image.open(argv)
-            for x in range(1, image.width):
-                for y in range(1, image.height):
-                    # Add color pair from left to right
-                    markov_data.record_pair(image.getpixel((x, y)),
-                                            image.getpixel((x - 1, y)))
-                    # Add color pair from top to bottom
-                    markov_data.record_pair(image.getpixel((x, y)),
-                                            image.getpixel((x, y - 1)))
-            image.close()
+            # Add image file to analyzing list
+            to_analyze.append(argv)
+    
+    # Analyze images
+    if should_read_markov:
+        with open(in_markov_path, 'rb') as fp:
+            markov_data = pickle.load(fp)
+    else:
+        for image in to_analyze:
+            analyze_image(image)
+    
+    # Write markov data
+    if should_write_markov:
+        with open(out_markov_path, 'wb') as fp:
+            pickle.dump(markov_data, fp)
     
     # Create an image
     out = create_image_from_point(width // 2, height // 2, width, height)
-    out.save(out_path)
-    print('Success! Image "' + out_path + '" has been generated.')
+    out.save(out_img_path)
+    print('Success! Image "' + out_img_path + '" has been generated.')
     exit(0)
 
 
