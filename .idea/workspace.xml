@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="Convert between color ints and color tuples">
-      <change afterPath="$PROJECT_DIR$/ImageGeneration/data_obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/proc-gen-workshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proc-gen-workshop.iml" afterDir="false" />
+    <list default="true" id="ba5c900d-fc79-4719-9933-c6197f190caf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneration/markov_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/markov_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageGeneration/markov_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/markov_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageGeneration/output_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/ImageGeneration/output_image.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,14 +183,8 @@
       <workItem from="1582064306232" duration="5175000" />
       <workItem from="1582071262987" duration="8862000" />
       <workItem from="1582227940450" duration="11621000" />
-      <workItem from="1582570772263" duration="6002000" />
-    </task>
-    <task id="LOCAL-00017" summary="Sine wave getsamples function done, needs testing">
-      <created>1573168087545</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1573168087545</updated>
+      <workItem from="1582570772263" duration="6079000" />
+      <workItem from="1583265578788" duration="424000" />
     </task>
     <task id="LOCAL-00018" summary="Make bad sounds">
       <created>1573177530991</created>
@@ -532,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582310566981</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Can write and read markov data from analyzed images">
+      <created>1582577565106</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1582577565107</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Write one chord for short duration" />
     <MESSAGE value="Begin waveviewer, remove close() within with clauses" />
     <MESSAGE value="Plotting stuff done, just need to get data points" />
     <MESSAGE value="More plotting setup, title, colors, axes, etc." />
@@ -578,7 +574,8 @@
     <MESSAGE value="Random pixel coloring using random PriorityQueue" />
     <MESSAGE value="All markov data logic moved to its own class" />
     <MESSAGE value="Convert between color ints and color tuples" />
-    <option name="LAST_COMMIT_MESSAGE" value="Convert between color ints and color tuples" />
+    <MESSAGE value="Can write and read markov data from analyzed images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can write and read markov data from analyzed images" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/proc_gen_workshop$markov_images.coverage" NAME="markov_images Coverage Results" MODIFIED="1582084144416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ImageGeneration" />

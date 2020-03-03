@@ -92,7 +92,8 @@ def in_bounds(xy, image):
 def printhelp():
     # Print basic usage
     print('\nUsage:  markov_images.py',
-          '[-h] [-W WIDTH] [-H HEIGHT] [-o PATH] [-s SEED]\n')
+          '[-h] [-W WIDTH] [-H HEIGHT] [-o PATH] [-s SEED] '
+          '[-wm FILE] [-rm FILE] input_images ...\n')
     
     # Print description of each option
     print('[' + OPTIONS[0] + ']\t\tDisplay this help message')
@@ -105,7 +106,7 @@ def printhelp():
     print('[' + OPTIONS[4] + ' SEED]\tSet the seed for the random generator '
                              '(uses random seed by default)')
     print('[' + OPTIONS[5] + ' FILE]\tWrite the markov data to a given file')
-    print('[' + OPTIONS[6] + ' FILE]\tRead the markov data to a given file')
+    print('[' + OPTIONS[6] + ' FILE]\tRead the markov data from a given file')
 
 
 def main():
